@@ -2,6 +2,7 @@ package com.example.abhi.utility.Main_fragments;
 
 import android.app.Activity;
 import android.app.Dialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -34,7 +35,8 @@ import static android.widget.Toast.LENGTH_LONG;
 public class WebFrag extends Fragment {
 
     public int array[] = {0,0,0};
-    public char arrayC[]={};
+    int count;
+
 
     @Nullable
     @Override
@@ -51,25 +53,29 @@ public class WebFrag extends Fragment {
         cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                array[0]=0;
+                array[1]=0;
+                array[1]=0;
                 Dialog dialog;
-                final String[] items = {"facebook","instagram","twitter"};
+                final String[] items = {"facebook","twitter","instagram"};
                 final ArrayList itemsSelected = new ArrayList();
 
 
                 AlertDialog.Builder builder = new AlertDialog.Builder(WebFrag.this.getActivity());
                 builder.setTitle("Select the websites you need");
+                builder.setCancelable(false);
                 builder.setMultiChoiceItems(items, null,
                         new DialogInterface.OnMultiChoiceClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int selectedItemId,
                                                 boolean isSelected) {
                                 if (isSelected) {
-                                   // Toast.makeText(WebFrag.this.getContext(),Integer.valueOf(selectedItemId),LENGTH_LONG).show();
                                     array[selectedItemId] = 1;
+                                    //Toast.makeText(getActivity(),"fb:"+array[0]+"ins:"+array[1]+"tw:"+array[2],Toast.LENGTH_SHORT).show();
                                     itemsSelected.add(selectedItemId);
                                 } else if (itemsSelected.contains(selectedItemId)) {
                                     array[selectedItemId] = 0;
+                                    //Toast.makeText(getActivity(),"fb:"+array[0]+"ins:"+array[1]+"tw:"+array[2],Toast.LENGTH_SHORT).show();
                                     itemsSelected.remove(Integer.valueOf(selectedItemId));
                                 }
                             }
@@ -77,19 +83,28 @@ public class WebFrag extends Fragment {
                         .setPositiveButton("Done", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int id) {
+
+
                                 //Your logic when OK button is clicked
-                                for (int i=0;i<2;i++) {
-                                 //   arrayC[i] = Character.forDigit(array[i], 10);
-                                  //  Toast.makeText(WebFrag.this.getContext(), itemsSelected.indexOf(i), LENGTH_LONG).show();
+                                for (int i=0;i<3;i++)
+                                {
+                                    if(array[i]==1) count++;
                                 }
+                                if (count==0)
+                                    Toast.makeText(getActivity(),"Select at least one Website",LENGTH_LONG).show();
+                                else{
+                                Toast.makeText(getActivity(),"fb:"+array[0]+"tw:"+array[1]+"ins:"+array[2],LENGTH_LONG).show();
                                 Intent intent = new Intent(WebFrag.this.getActivity(), TabWebSocial.class);
                                 intent.putExtra("numbers", array);
-                                startActivity(intent);
+                                startActivity(intent);}
                             }
                         })
                         .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int id) {
+                                array[0]=0;
+                                array[1]=0;
+                                array[1]=0;
                             }
                         });
                 dialog = builder.create();

@@ -18,16 +18,21 @@ import com.example.abhi.utility.web_fragments.TW;
 import java.util.ArrayList;
 import java.util.List;
 
+import static android.widget.Toast.LENGTH_LONG;
+
 public class TabWebSocial extends AppCompatActivity {
     public String web;
     public String data = "fb";
-    private int pos;
+    private int temp;
+    int arrayB[];
+    String count[]={"ONE","TWO","THREE"};
     private Toolbar toolbar;
     private TabLayout tabLayout;
     private ViewPager viewPager;
     FB fb1 = new FB();
     INS ins = new INS();
     TW tw = new TW();
+    int count_tab;
     private int[] tabIcons = {
             R.drawable.fb,
             R.drawable.tw,
@@ -39,7 +44,14 @@ public class TabWebSocial extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         //data = getIntent().getExtras().getString("website");
-        int arrayB[] = getIntent().getExtras().getIntArray("numbers");
+        arrayB = getIntent().getExtras().getIntArray("numbers");
+        Toast.makeText(this,"fb:"+arrayB[0]+"ins:"+arrayB[1]+"tw:"+arrayB[2],Toast.LENGTH_SHORT).show();
+
+        //counting number of tabs
+        for (int i=0;i<3;i++) {
+            if (arrayB[i] == 1)            count_tab++;
+        }
+        Toast.makeText(this,"count:"+count_tab,Toast.LENGTH_SHORT).show();
 
         setContentView(R.layout.activity_tab_web_social);
         toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -53,6 +65,7 @@ public class TabWebSocial extends AppCompatActivity {
         tabLayout.setupWithViewPager(viewPager);
         setupTabIcons();
 
+        /*
         switch (data){
             case "fb" : pos = 0;break;
             case "tw" : pos = 1; break;
@@ -63,15 +76,16 @@ public class TabWebSocial extends AppCompatActivity {
         tab.select();
         web = data;
         Toast.makeText(this,data,Toast.LENGTH_LONG).show();
-
+        */
         Bundle bundle = new Bundle();
         bundle.putString("webpage", data);
-// set Fragmentclass Arguments
+
+        // set Fragmentclass Arguments
 
         //for (int i=0;arrayB[i]==1;i++) {
             fb1.setArguments(bundle);
-            ins.setArguments(bundle);
             tw.setArguments(bundle);
+            ins.setArguments(bundle);
 
 
 
@@ -79,16 +93,32 @@ public class TabWebSocial extends AppCompatActivity {
     }
 
     private void setupTabIcons() {
-        tabLayout.getTabAt(0).setIcon(tabIcons[0]);
-        tabLayout.getTabAt(1).setIcon(tabIcons[1]);
-        tabLayout.getTabAt(2).setIcon(tabIcons[2]);
+        temp=0;
+        for (int i =0;i<count_tab;i++) {
+            if(arrayB[i]==1) {
+                tabLayout.getTabAt(temp).setIcon(tabIcons[temp]);
+                temp++;
+            }
+        }
     }
 
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
-        adapter.addFrag(fb1, "ONE");
-        adapter.addFrag(tw, "TWO");
-        adapter.addFrag(ins, "THREE");
+        temp=0;
+        if(arrayB[0]==1) {
+            adapter.addFrag(fb1, count[temp]);
+            temp++;
+        }
+
+        if(arrayB[1]==1) {
+            adapter.addFrag(tw, count[temp]);
+            temp++;
+        }
+
+        if(arrayB[2]==1) {
+            adapter.addFrag(ins, count[temp]);
+            temp++;
+        }
         viewPager.setAdapter(adapter);
     }
 
