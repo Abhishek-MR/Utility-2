@@ -119,10 +119,7 @@ public class WebFrag extends Fragment {
     private ArrayList<Option> getMainOptions() {
         ArrayList<Option> options =new ArrayList<>();
 
-        Option option = new Option(R.drawable.google,"google");
-        options.add(option);
-
-        option = new Option(R.drawable.fb,"facebook");
+        Option option = new Option(R.drawable.fb,"facebook");
         options.add(option);
 
         option = new Option(R.drawable.tw,"twitter");

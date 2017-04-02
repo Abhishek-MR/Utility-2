@@ -23,21 +23,12 @@ import com.example.abhi.utility.Main_fragments.WebFrag;
 
 
 public class MainActivity extends AppCompatActivity {
-    View viewL;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        LayoutInflater layoutInflater = getLayoutInflater();
-        viewL = layoutInflater.inflate(R.layout.custom_toast, (ViewGroup) findViewById(R.id.customlayout));
-
-        /*Toast toast = Toast.makeText(this,"Toast:Gravity.TOP",Toast.LENGTH_LONG);
-        toast.setGravity(Gravity.CENTER,0,0);
-        toast.setView(viewL);
-        toast.show();*/
 
         RequestUserPermission requestUserPermission = new RequestUserPermission(this);
         requestUserPermission.verifyStoragePermissions();
@@ -66,26 +57,10 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-      /*  FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(MainActivity.this, Flashlight.class);
-                startActivity(i);
-
-
-                }
-        });
-*/
 
     }
 
-    public boolean checkLocationPermission()
-    {
-        String permission = "android.permission.ACCESS_FINE_LOCATION";
-        int res = this.checkCallingOrSelfPermission(permission);
-        return (res == PackageManager.PERMISSION_GRANTED);
-    }
+
 
     public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {
         switch (requestCode) {

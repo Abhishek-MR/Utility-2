@@ -23,7 +23,7 @@ import static android.widget.Toast.LENGTH_LONG;
 public class TabWebSocial extends AppCompatActivity {
     public String web;
     public String data = "fb";
-    private int temp;
+    private int temp,temp1;
     int arrayB[];
     String count[]={"ONE","TWO","THREE"};
     private Toolbar toolbar;
@@ -93,12 +93,20 @@ public class TabWebSocial extends AppCompatActivity {
     }
 
     private void setupTabIcons() {
-        temp=0;
-        for (int i =0;i<count_tab;i++) {
-            if(arrayB[i]==1) {
-                tabLayout.getTabAt(temp).setIcon(tabIcons[temp]);
-                temp++;
-            }
+        temp1=0;
+        if(arrayB[0]==1) {
+            tabLayout.getTabAt(temp1).setIcon(tabIcons[0]);
+            temp++;
+        }
+
+        if(arrayB[1]==1) {
+            tabLayout.getTabAt(temp1).setIcon(tabIcons[1]);
+            temp++;
+        }
+
+        if(arrayB[2]==1) {
+            tabLayout.getTabAt(temp1).setIcon(tabIcons[2]);
+            temp++;
         }
     }
 

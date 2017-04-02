@@ -92,7 +92,7 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyViewHolder>  {
                         break;
 
                     case "facebook":
-                        i = new Intent(c, TabWebSocial.class);
+                        i = new Intent(c, WebActivity.class);
                         i.putExtra("website", "fb");
                         break;
                     case "google":
@@ -100,11 +100,11 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyViewHolder>  {
                         i.putExtra("website", "go");
                         break;
                     case "twitter":
-                        i = new Intent(c, TabWebSocial.class);
+                        i = new Intent(c, WebActivity.class);
                         i.putExtra("website", "tw");
                         break;
                     case "instagram":
-                        i = new Intent(c, TabWebSocial.class);
+                        i = new Intent(c, WebActivity.class);
                         i.putExtra("website", "in");
                         break;
                     case "linkedin":
