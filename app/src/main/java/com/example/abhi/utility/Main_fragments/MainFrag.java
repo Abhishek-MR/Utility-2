@@ -15,10 +15,6 @@ import com.example.abhi.utility.recycler.Option;
 
 import java.util.ArrayList;
 
-/**
- * Created by abhi on 26/2/17.
- */
-
 public class MainFrag extends Fragment {
 
     @Nullable
