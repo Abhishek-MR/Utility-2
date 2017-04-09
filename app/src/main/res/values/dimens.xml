@@ -5,7 +5,9 @@
     <dimen name="fab_margin">16dp</dimen>
 
     <dimen name="edit_text_text_size">50sp</dimen>
+    <dimen name="nav_header_height">160dp</dimen>
 
+    <dimen name="nav_header_vertical_spacing">16dp</dimen>
 
     <!-- cal dim -->
     <dimen name="activity_margin">16dp</dimen>

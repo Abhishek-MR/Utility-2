@@ -12,6 +12,8 @@
     <color name="textFormatYellow">#e6e200</color>
     <color name="textFormatWhite">#EEEEEE</color>
 
+    <color name="darkblue">#000000</color>
+
 
     <!-- convert -->
     <color name="theme_blue">#3b73af</color>

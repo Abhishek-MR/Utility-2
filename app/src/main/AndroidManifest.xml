@@ -61,6 +61,11 @@
             android:name=".MainActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity android:name=".RulerActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"/>
+
         <activity
             android:name=".WebActivity"
             android:screenOrientation="portrait"
@@ -68,8 +73,6 @@
 
         <activity android:name=".TabWebSocial"
             android:theme="@style/MyMaterialTheme">
-
-
         </activity>
     </application>
 

@@ -2,21 +2,18 @@ package com.example.abhi.utility.recycler;
 
 import android.content.Context;
 import android.content.Intent;
-import android.os.Build;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.webkit.WebView;
-import android.widget.Toast;
 
 import com.example.abhi.utility.BMI;
 import com.example.abhi.utility.Calendar;
 import com.example.abhi.utility.Compass;
 import com.example.abhi.utility.Flashlight;
-import com.example.abhi.utility.Main_fragments.MainFrag;
 import com.example.abhi.utility.Notes;
 import com.example.abhi.utility.R;
+import com.example.abhi.utility.RulerActivity;
 import com.example.abhi.utility.TabWebSocial;
 import com.example.abhi.utility.Timer;
 import com.example.abhi.utility.WebActivity;
@@ -89,6 +86,9 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyViewHolder>  {
 
                     case "notes":
                         i = new Intent(c, Notes.class);
+                        break;
+                    case "ruler":
+                        i = new Intent(c, RulerActivity.class);
                         break;
 
                     case "facebook":
