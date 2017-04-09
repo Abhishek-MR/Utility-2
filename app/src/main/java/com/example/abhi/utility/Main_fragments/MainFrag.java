@@ -74,6 +74,6 @@ public class MainFrag extends Fragment {
 
     @Override
     public String toString() {
-        return "Main";
+        return "Tools";
     }
 }

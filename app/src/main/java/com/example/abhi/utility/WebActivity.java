@@ -1,12 +1,14 @@
 package com.example.abhi.utility;
 
 import android.content.DialogInterface;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
+import android.view.ViewTreeObserver;
 import android.webkit.GeolocationPermissions;
 import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
@@ -15,6 +17,7 @@ import android.webkit.WebViewClient;
 
 public class WebActivity extends AppCompatActivity {
     WebView mainWebView;
+    SwipeRefreshLayout swipeLayout;
 
     /** Called when the activity is first created. */
     @Override
@@ -28,6 +31,7 @@ public class WebActivity extends AppCompatActivity {
         String website = "http://www.google.com";
 
 
+        swipeLayout = (SwipeRefreshLayout) findViewById(R.id.swipeLayout);
         mainWebView = (WebView) findViewById(R.id.webView1);
 
         WebSettings webSettings = mainWebView.getSettings();
@@ -82,6 +86,31 @@ public class WebActivity extends AppCompatActivity {
             AlertDialog alert = builder.create();
             alert.show();
         }
+    }
+
+    private ViewTreeObserver.OnScrollChangedListener mOnScrollChangedListener;
+
+    @Override
+    public void onStart() {
+        super.onStart();
+
+        swipeLayout.getViewTreeObserver().addOnScrollChangedListener(mOnScrollChangedListener =
+                new ViewTreeObserver.OnScrollChangedListener() {
+                    @Override
+                    public void onScrollChanged() {
+                        if (mainWebView.getScrollY() == 0)
+                            swipeLayout.setEnabled(true);
+                        else
+                            swipeLayout.setEnabled(false);
+
+                    }
+                });
+    }
+
+    @Override
+    public void onStop() {
+        swipeLayout.getViewTreeObserver().removeOnScrollChangedListener(mOnScrollChangedListener);
+        super.onStop();
     }
 
 

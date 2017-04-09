@@ -6,6 +6,8 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 
 import com.example.abhi.utility.BMI;
 import com.example.abhi.utility.Calendar;
@@ -30,6 +32,8 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyViewHolder>  {
     Context c;
     ArrayList<Option> options;
     String opn;
+    private int lastPosition = -1;
+
 
 
     public MyRecyclerAdapter(Context c, ArrayList<Option> options) {
@@ -49,6 +53,7 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyViewHolder>  {
     public void onBindViewHolder(MyViewHolder holder, int position) {
         holder.nameText.setText(options.get(position).getOptionname());
         holder.img.setImageResource(options.get(position).getOptionimg());
+        setAnimation(holder.itemView, position);
 
         holder.setItemClickListener(new ItemClickListener() {
             @Override
@@ -153,6 +158,16 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyViewHolder>  {
 
     }
 
+    private void setAnimation(View viewToAnimate, int position)
+    {
+        // If the bound view wasn't previously displayed on screen, it's animated
+        if (position > lastPosition)
+        {
+            Animation animation = AnimationUtils.loadAnimation(c, android.R.anim.slide_in_left);
+            viewToAnimate.startAnimation(animation);
+            lastPosition = position;
+        }
+    }
     @Override
     public int getItemCount() {
         return options.size();

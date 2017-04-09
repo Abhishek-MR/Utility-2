@@ -152,6 +152,6 @@ public class WebFrag extends Fragment {
 
     @Override
     public String toString() {
-        return "Web";
+        return "Social";
     }
 }
