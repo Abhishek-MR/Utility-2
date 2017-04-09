@@ -1,4 +1,4 @@
-package com.example.abhi.utility;
+package com.example.abhi.utility.ruler;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -7,6 +7,8 @@ import android.graphics.Paint;
 import android.graphics.Path;
 import android.support.v4.content.ContextCompat;
 import android.view.View;
+
+import com.example.abhi.utility.R;
 
 /**
  * Created by roberts on 02.06.16.

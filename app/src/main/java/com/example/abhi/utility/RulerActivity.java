@@ -9,6 +9,9 @@ import android.view.MenuItem;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
+import com.example.abhi.utility.ruler.BaseActivity;
+import com.example.abhi.utility.ruler.RulerView;
+
 public class RulerActivity extends BaseActivity {
 
     @Override
