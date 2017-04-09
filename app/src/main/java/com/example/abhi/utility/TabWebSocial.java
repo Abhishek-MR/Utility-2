@@ -65,18 +65,7 @@ public class TabWebSocial extends AppCompatActivity {
         tabLayout.setupWithViewPager(viewPager);
         setupTabIcons();
 
-        /*
-        switch (data){
-            case "fb" : pos = 0;break;
-            case "tw" : pos = 1; break;
-            case "ins" : pos = 2; break;
-            default: pos = 0; break;
-        }
-        TabLayout.Tab tab = tabLayout.getTabAt(pos);
-        tab.select();
-        web = data;
-        Toast.makeText(this,data,Toast.LENGTH_LONG).show();
-        */
+
         Bundle bundle = new Bundle();
         bundle.putString("webpage", data);
 
@@ -95,18 +84,18 @@ public class TabWebSocial extends AppCompatActivity {
     private void setupTabIcons() {
         temp1=0;
         if(arrayB[0]==1) {
-            tabLayout.getTabAt(temp1).setIcon(tabIcons[0]);
-            temp++;
+            tabLayout.getTabAt(temp1).setIcon(R.drawable.fb);
+            temp1++;
         }
 
         if(arrayB[1]==1) {
-            tabLayout.getTabAt(temp1).setIcon(tabIcons[1]);
-            temp++;
+            tabLayout.getTabAt(temp1).setIcon(R.drawable.tw);
+            temp1++;
         }
 
         if(arrayB[2]==1) {
-            tabLayout.getTabAt(temp1).setIcon(tabIcons[2]);
-            temp++;
+            tabLayout.getTabAt(temp1).setIcon(R.drawable.ins);
+            temp1++;
         }
     }
 
