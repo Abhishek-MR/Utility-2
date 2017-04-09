@@ -11,6 +11,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 import com.example.abhi.utility.R;
 import com.example.abhi.utility.recycler.MyRecyclerAdapter;
@@ -24,6 +25,7 @@ public class GamesFrag extends Fragment {
     CardView offcardView,oncardView;
     RecyclerView rvon,rvoff;
     int offcount,oncount;
+    ImageView onimg,offimg;
 
 
     @Nullable
@@ -43,10 +45,18 @@ public class GamesFrag extends Fragment {
 
         rvoff = (RecyclerView) v.findViewById(R.id.offrec);
 
+        offimg = (ImageView) v.findViewById(R.id.offimg);
+
+        onimg = (ImageView) v.findViewById(R.id.onimg);
+
 
         offcardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (offcount % 2 == 0)
+                    offimg.setScaleY(1);
+                if (offcount % 2 != 0)
+                    offimg.setScaleY(-1);
                 setoffrv();
             }
         });
@@ -54,6 +64,10 @@ public class GamesFrag extends Fragment {
         oncardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (oncount % 2 == 0)
+                    onimg.setScaleY(1);
+                if (oncount % 2 != 0)
+                    onimg.setScaleY(-1);
                 setonrv();
             }
         });
@@ -100,6 +114,7 @@ public class GamesFrag extends Fragment {
         rvoff.setLayoutManager(new LinearLayoutManager(this.getActivity()));
         rvoff.setAdapter(new MyRecyclerAdapter(this.getActivity(), getOfflineOptions()));
         rvoff.setVisibility(((offcount%2==0)?View.GONE:View.VISIBLE));
+
     }
 
     public void setonrv()
