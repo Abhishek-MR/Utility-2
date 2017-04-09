@@ -132,6 +132,17 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyViewHolder>  {
                         i.putExtra("website", "ho");
                         break;
 
+                    case "piano":
+                        i = new Intent(c, WebActivity.class);
+                        i.putExtra("website", "pi");
+                        break;
+
+                    case "flappy bird":
+                        i = new Intent(c, WebActivity.class);
+                        i.putExtra("website", "flp");
+                        break;
+
+
                 }
 
                 c.startActivity(i);

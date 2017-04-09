@@ -48,6 +48,8 @@ public class WebActivity extends AppCompatActivity {
             case "do" : website = "https://www.practo.com/"; break;
             case "ub" : website = "https://m.uber.com/"; break;
             case "ho" : website = "https://www.oyorooms.com/"; break;
+            case "pi" : website = "http://m.silvergames.com/en/piano-tiles"; break;
+            case "flp" : website = "http://m.silvergames.com/en/flappy-bird"; break;
 
 
 
