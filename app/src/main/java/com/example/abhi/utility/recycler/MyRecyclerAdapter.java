@@ -14,7 +14,7 @@ import com.example.abhi.utility.Flashlight;
 import com.example.abhi.utility.Notes;
 import com.example.abhi.utility.R;
 import com.example.abhi.utility.RulerActivity;
-import com.example.abhi.utility.TabWebSocial;
+import com.example.abhi.utility.SocialMediaTabSel;
 import com.example.abhi.utility.Timer;
 import com.example.abhi.utility.WebActivity;
 import com.example.abhi.utility.calactivities.CalculatorMainAct;
@@ -61,7 +61,7 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyViewHolder>  {
                         break;
 
                     case "b":
-                        i = new Intent(c, TabWebSocial.class);
+                        i = new Intent(c, SocialMediaTabSel.class);
                         break;
 
                     case "flashlight":

@@ -1,7 +1,6 @@
 package com.example.abhi.utility.web_fragments;
 
 import android.content.Context;
-import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.KeyEvent;
@@ -11,10 +10,9 @@ import android.view.ViewGroup;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
-import android.widget.Toast;
 
 import com.example.abhi.utility.R;
-import com.example.abhi.utility.TabWebSocial;
+import com.example.abhi.utility.SocialMediaTabSel;
 
 /**
  * Created by abhi on 28/2/17.
@@ -24,7 +22,7 @@ public class FB extends Fragment {
      WebView mainWebView;
     Context c;
     String webpage;
-    TabWebSocial tabWebSocial;
+    SocialMediaTabSel tabWebSocial;
 
     public FB() {
         // Required empty public constructor

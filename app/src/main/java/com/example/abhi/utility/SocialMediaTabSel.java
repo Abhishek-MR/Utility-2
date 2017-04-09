@@ -20,7 +20,7 @@ import java.util.List;
 
 import static android.widget.Toast.LENGTH_LONG;
 
-public class TabWebSocial extends AppCompatActivity {
+public class SocialMediaTabSel extends AppCompatActivity {
     public String web;
     public String data = "fb";
     private int temp,temp1;

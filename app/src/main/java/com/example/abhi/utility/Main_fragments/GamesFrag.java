@@ -36,11 +36,13 @@ public class GamesFrag extends Fragment {
     private ArrayList<Option> getMainOptions() {
         ArrayList<Option> options = new ArrayList<>();
 
-        Option option = new Option(R.drawable.piano, "piano");
+        Option option = new Option(R.drawable.piano, "piano tiles");
         options.add(option);
 
         option = new Option(R.drawable.flappy, "flappy bird");
         options.add(option);
+
+
         return options;
 
     }

@@ -71,7 +71,7 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"/>
 
-        <activity android:name=".TabWebSocial"
+        <activity android:name=".SocialMediaTabSel"
             android:theme="@style/MyMaterialTheme">
         </activity>
     </application>

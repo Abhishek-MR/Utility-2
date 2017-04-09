@@ -82,8 +82,8 @@ public class MainActivity extends AppCompatActivity {
 
         adapter.addPage(new WebFrag());
         adapter.addPage(new MainFrag());
-        adapter.addPage(new OthersFrag());
         adapter.addPage(new GamesFrag());
+        adapter.addPage(new OthersFrag());
 
         pager.setAdapter(adapter);
     }
