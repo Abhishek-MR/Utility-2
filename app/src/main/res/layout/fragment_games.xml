@@ -10,14 +10,65 @@
     android:background="#00000000"
     android:paddingBottom="10dp"
 
-
     >
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="3dp"
+        android:id="@+id/offlinecard"
+        android:layout_margin="20dp"
+
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Offline"
+            android:textSize="18dp"
+            android:textAllCaps="true"
+            android:layout_margin="5dp"
+            android:textColor="#000"
+            android:textStyle="bold"
+            android:layout_gravity="center"
+            />
+    </android.support.v7.widget.CardView>
 
     <android.support.v7.widget.RecyclerView
         android:layout_width="match_parent"
-        android:id="@+id/mainrec"
+        android:id="@+id/offrec"
         android:layout_height="wrap_content"
+        >
 
+    </android.support.v7.widget.RecyclerView>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="3dp"
+        android:id="@+id/onlinecard"
+        android:layout_margin="20dp"
+
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Online"
+            android:textSize="18dp"
+            android:textAllCaps="true"
+            android:layout_margin="5dp"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:textColor="#000"
+
+            />
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:id="@+id/onrec"
+        android:layout_height="wrap_content"
         >
 
     </android.support.v7.widget.RecyclerView>

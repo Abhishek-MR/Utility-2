@@ -1,8 +1,11 @@
 package com.example.abhi.utility.Main_fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -18,6 +21,11 @@ import java.util.ArrayList;
 
 public class GamesFrag extends Fragment {
 
+    CardView offcardView,oncardView;
+    RecyclerView rvon,rvoff;
+    int offcount,oncount;
+
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -26,14 +34,39 @@ public class GamesFrag extends Fragment {
 
         //Recycler
 
-        RecyclerView rv = (RecyclerView) v.findViewById(R.id.mainrec);
-        rv.setHasFixedSize(true);
-        rv.setLayoutManager(new LinearLayoutManager(this.getActivity()));
-        rv.setAdapter(new MyRecyclerAdapter(this.getActivity(), getMainOptions()));
+
+        offcardView = (CardView) v.findViewById(R.id.offlinecard);
+
+        oncardView = (CardView) v.findViewById(R.id.onlinecard);
+
+        rvon = (RecyclerView) v.findViewById(R.id.onrec);
+
+        rvoff = (RecyclerView) v.findViewById(R.id.offrec);
+
+
+        offcardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                setoffrv();
+            }
+        });
+
+        oncardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                setonrv();
+            }
+        });
+
+
+
+
+
+
         return v;
     }
 
-    private ArrayList<Option> getMainOptions() {
+    private ArrayList<Option> getOnlineOptions() {
         ArrayList<Option> options = new ArrayList<>();
 
         Option option = new Option(R.drawable.piano, "piano tiles");
@@ -42,10 +75,45 @@ public class GamesFrag extends Fragment {
         option = new Option(R.drawable.flappy, "flappy bird");
         options.add(option);
 
+        return options;
+
+    }
+
+    private ArrayList<Option> getOfflineOptions() {
+        ArrayList<Option> options = new ArrayList<>();
+
+        Option option = new Option(R.drawable.piano, "piano tiles");
+        options.add(option);
+
+        option = new Option(R.drawable.flappy, "flappy bird");
+        options.add(option);
 
         return options;
 
     }
+
+    public void setoffrv()
+    {
+
+        offcount++;
+        rvoff.setHasFixedSize(true);
+        rvoff.setLayoutManager(new LinearLayoutManager(this.getActivity()));
+        rvoff.setAdapter(new MyRecyclerAdapter(this.getActivity(), getOfflineOptions()));
+        rvoff.setVisibility(((offcount%2==0)?View.GONE:View.VISIBLE));
+    }
+
+    public void setonrv()
+    {
+        oncount++;
+        rvon.setHasFixedSize(true);
+        rvon.setLayoutManager(new LinearLayoutManager(this.getActivity()));
+        rvon.setAdapter(new MyRecyclerAdapter(this.getActivity(), getOnlineOptions()));
+        rvon.setVisibility(((oncount%2==0)?View.GONE:View.VISIBLE));
+
+    }
+
+
+
     @Override
     public String toString() {
         return "games";
