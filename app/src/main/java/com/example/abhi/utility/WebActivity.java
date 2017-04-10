@@ -41,6 +41,22 @@ public class WebActivity extends AppCompatActivity {
         mainWebView.setWebViewClient(new MyCustomWebViewClient());
         mainWebView.setScrollBarStyle(View.SCROLLBARS_INSIDE_OVERLAY);
 
+        mainWebView.setWebViewClient(new WebViewClient() {
+
+            public void onPageFinished(WebView view, String url) {
+                super.onPageFinished(view, url);
+                swipeLayout.setRefreshing(false);
+            }
+        });
+
+
+        swipeLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                mainWebView.reload();
+                swipeLayout.setRefreshing(true);
+            }
+        });
 
         switch (data){
             case "fb" : website = "http://www.facebook.com"; break;
@@ -88,7 +104,7 @@ public class WebActivity extends AppCompatActivity {
         }
     }
 
-    private ViewTreeObserver.OnScrollChangedListener mOnScrollChangedListener;
+    /*private ViewTreeObserver.OnScrollChangedListener mOnScrollChangedListener;
 
     @Override
     public void onStart() {
@@ -112,6 +128,8 @@ public class WebActivity extends AppCompatActivity {
         swipeLayout.getViewTreeObserver().removeOnScrollChangedListener(mOnScrollChangedListener);
         super.onStop();
     }
+
+*/
 
 
 

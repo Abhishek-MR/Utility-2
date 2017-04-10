@@ -95,19 +95,26 @@ public class BMI extends AppCompatActivity{
 
 
             //Error handling
+            //weight
             TextInputLayout til1 = (TextInputLayout) findViewById(R.id.lay1);
             til1.setErrorEnabled(true);
             if (weightNum.getText().toString().isEmpty())
                 til1.setError("Please input the weight.");
+            if (Double.parseDouble(weightNum.getText().toString())>120)
+                til1.setError("Weight exceeds.");
+
             else
                 til1.setError(null);
 
+            //height
             TextInputLayout til2 = (TextInputLayout) findViewById(R.id.lay2);
             til2.setErrorEnabled(true);
             if (weightNum.getText().toString().isEmpty())
             til2.setError("Please input the height.");
+            if  (Double.parseDouble(heightNum.getText().toString())>200)
+                til2.setError("Height exceeds.");
             else
-                til1.setError(null);
+                til2.setError(null);
 
 
             if (valuereturn(newBMI))
@@ -120,7 +127,7 @@ public class BMI extends AppCompatActivity{
     // the formula to calculate the BMI index
     private double calculateBMI (double weight, double height) {
         // convert values to metric
-        return (double) (((weight / 2.2046) / (height * 0.0254)) / (height * 0.0254));
+        return ((weight / 2.2046) / (height * 0.0254)) / (height * 0.0254);
     }
 
     public boolean valuereturn (double bmi)
