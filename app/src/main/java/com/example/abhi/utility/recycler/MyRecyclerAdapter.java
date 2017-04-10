@@ -67,7 +67,7 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyViewHolder>  {
                         break;
 
                     case "b":
-                        i = new Intent(c, SocialMediaTabSel.class);
+                        i = new Intent(c, Compass.class);
                         break;
 
                     case "flashlight":
@@ -151,6 +151,18 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyViewHolder>  {
                         i = new Intent(c, WebActivity.class);
                         i.putExtra("website", "flp");
                         break;
+
+                    case "Stack tower":
+                        i = new Intent(c, WebActivity.class);
+                        i.putExtra("website", "st");
+                        break;
+
+                    case "2048":
+                        i = new Intent(c, WebActivity.class);
+                        i.putExtra("website", "20");
+                        break;
+
+
 
 
                 }

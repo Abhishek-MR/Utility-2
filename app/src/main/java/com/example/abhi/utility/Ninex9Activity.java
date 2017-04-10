@@ -221,7 +221,7 @@ public class Ninex9Activity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        this.finish();
+        startActivity(new Intent(Ninex9Activity.this,MinesweeperAct.class));
     }
 
     public void onToggleClicked(View view) {

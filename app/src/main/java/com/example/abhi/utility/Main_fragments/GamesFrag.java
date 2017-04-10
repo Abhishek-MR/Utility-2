@@ -89,6 +89,12 @@ public class GamesFrag extends Fragment {
         option = new Option(R.drawable.flappy, "flappy bird");
         options.add(option);
 
+        option = new Option(R.drawable.icon, "Stack tower");
+        options.add(option);
+
+        option = new Option(R.drawable.icon, "2048");
+        options.add(option);
+
         return options;
 
     }
@@ -96,14 +102,17 @@ public class GamesFrag extends Fragment {
     private ArrayList<Option> getOfflineOptions() {
         ArrayList<Option> options = new ArrayList<>();
 
-        Option option = new Option(R.drawable.piano, "piano tiles");
+        Option option = new Option(R.drawable.logo, "minesweeper");
+        options.add(option);
+
+        option = new Option(R.drawable.piano, "piano tiles");
         options.add(option);
 
         option = new Option(R.drawable.flappy, "flappy bird");
         options.add(option);
 
-        option = new Option(R.drawable.logo, "minesweeper");
-        options.add(option);
+
+
 
         return options;
 

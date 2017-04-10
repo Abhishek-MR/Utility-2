@@ -133,7 +133,8 @@ public class MinesweeperAct extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        finish();
+        startActivity(new Intent(MinesweeperAct.this,MainActivity.class));
+
     }
     public void onToggleClicked(View view)
     {
