@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#63cf4f">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="You win!!!"
+        android:layout_marginTop="230dp"
+        android:layout_marginLeft="115dp"
+        android:id="@+id/textView4"
+        android:layout_gravity="center_vertical"
+        android:textColor="#1a3274"
+        android:textSize="@dimen/abc_dialog_padding_material" />
+</RelativeLayout>
+

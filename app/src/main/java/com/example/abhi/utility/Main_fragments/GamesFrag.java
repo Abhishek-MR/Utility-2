@@ -102,6 +102,9 @@ public class GamesFrag extends Fragment {
         option = new Option(R.drawable.flappy, "flappy bird");
         options.add(option);
 
+        option = new Option(R.drawable.logo, "minesweeper");
+        options.add(option);
+
         return options;
 
     }

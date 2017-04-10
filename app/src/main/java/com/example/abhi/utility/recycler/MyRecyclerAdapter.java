@@ -13,6 +13,7 @@ import com.example.abhi.utility.BMI;
 import com.example.abhi.utility.Calendar;
 import com.example.abhi.utility.Compass;
 import com.example.abhi.utility.Flashlight;
+import com.example.abhi.utility.MinesweeperAct;
 import com.example.abhi.utility.Notes;
 import com.example.abhi.utility.R;
 import com.example.abhi.utility.RulerActivity;
@@ -94,6 +95,10 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyViewHolder>  {
                         break;
                     case "ruler":
                         i = new Intent(c, RulerActivity.class);
+                        break;
+
+                    case "minesweeper":
+                        i = new Intent(c, MinesweeperAct.class);
                         break;
 
                     case "facebook":

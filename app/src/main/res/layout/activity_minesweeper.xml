@@ -1,0 +1,417 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.abhi.utility.MinesweeperAct"
+    android:background="@android:color/background_light">
+
+
+    <ImageView
+        android:layout_width="80px"
+        android:layout_height="80px"
+        android:onClick="click1"
+        android:id="@+id/imageView1"
+        android:layout_marginLeft="90px"
+        android:layout_marginTop="25dp"
+        />
+
+    <ImageView
+        android:layout_width="80px"
+        android:layout_height="80px"
+        android:layout_marginTop="25dp"
+        android:onClick="click2"
+        android:id="@+id/imageView2"
+
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/imageView1" />
+
+    <ImageView
+        android:layout_width="80px"
+        android:layout_height="80px"
+        android:layout_marginTop="25dp"
+        android:onClick="click3"
+        android:id="@+id/imageView3"
+
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/imageView2" />
+
+    <ImageView
+        android:layout_width="80px"
+        android:layout_height="80px"
+        android:layout_marginTop="25dp"
+        android:onClick="click4"
+        android:id="@+id/imageView4"
+
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/imageView3" />
+
+    <ImageView
+        android:layout_width="80px"
+        android:layout_height="80px"
+        android:layout_marginTop="25dp"
+        android:onClick="click5"
+        android:id="@+id/imageView5"
+
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/imageView4" />
+
+    <ImageView
+        android:layout_width="80px"
+        android:layout_height="80px"
+        android:layout_marginTop="25dp"
+        android:onClick="click6"
+        android:id="@+id/imageView6"
+
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/imageView5" />
+    <ImageView
+        android:layout_width="80px"
+        android:layout_height="80px"
+        android:onClick="click7"
+        android:id="@+id/imageView7"
+        android:layout_marginLeft="90px"
+        android:layout_below="@id/imageView1"
+        />
+    <ImageView
+        android:layout_width="80px"
+        android:layout_height="80px"
+        android:onClick="click8"
+        android:id="@+id/imageView8"
+
+
+        android:layout_below="@id/imageView2"
+        android:layout_toEndOf="@+id/imageView7" />
+    <ImageView
+        android:layout_width="80px"
+        android:layout_height="80px"
+        android:onClick="click9"
+        android:id="@+id/imageView9"
+
+
+        android:layout_below="@id/imageView3"
+        android:layout_toEndOf="@+id/imageView8" />
+    <ImageView
+        android:layout_width="80px"
+        android:layout_height="80px"
+        android:onClick="click10"
+        android:id="@+id/imageView10"
+
+
+        android:layout_below="@id/imageView4"
+        android:layout_toEndOf="@+id/imageView9" />
+    <ImageView
+        android:layout_width="80px"
+        android:layout_height="80px"
+        android:onClick="click11"
+        android:id="@+id/imageView11"
+
+
+        android:layout_below="@id/imageView3"
+        android:layout_toEndOf="@+id/imageView10" />
+    <ImageView
+        android:layout_width="80px"
+        android:layout_height="80px"
+        android:onClick="click12"
+        android:id="@+id/imageView12"
+
+
+        android:layout_below="@id/imageView4"
+        android:layout_toEndOf="@+id/imageView11" />
+    <ImageView
+        android:layout_width="80px"
+        android:layout_height="80px"
+        android:onClick="click13"
+        android:id="@+id/imageView13"
+        android:layout_marginLeft="90px"
+        android:layout_below="@id/imageView7"
+        />
+    <ImageView
+        android:layout_width="80px"
+        android:layout_height="80px"
+        android:onClick="click14"
+        android:id="@+id/imageView14"
+
+
+        android:layout_below="@id/imageView8"
+        android:layout_toEndOf="@+id/imageView13" />
+    <ImageView
+        android:layout_width="80px"
+        android:layout_height="80px"
+        android:onClick="click15"
+        android:id="@+id/imageView15"
+
+
+        android:layout_below="@id/imageView9"
+        android:layout_toEndOf="@+id/imageView14" />
+    <ImageView
+        android:layout_width="80px"
+        android:layout_height="80px"
+        android:onClick="click16"
+        android:id="@+id/imageView16"
+
+
+        android:layout_below="@id/imageView10"
+        android:layout_toEndOf="@+id/imageView15" />
+    <ImageView
+        android:layout_width="80px"
+        android:layout_height="80px"
+        android:onClick="click17"
+        android:id="@+id/imageView17"
+
+
+        android:layout_below="@id/imageView9"
+        android:layout_toEndOf="@+id/imageView16" />
+    <ImageView
+        android:layout_width="80px"
+        android:layout_height="80px"
+        android:onClick="click18"
+        android:id="@+id/imageView18"
+
+
+        android:layout_below="@id/imageView10"
+        android:layout_toEndOf="@+id/imageView17" />
+    <ImageView
+        android:layout_width="80px"
+        android:layout_height="80px"
+        android:onClick="click19"
+        android:id="@+id/imageView19"
+        android:layout_marginLeft="90px"
+        android:layout_below="@id/imageView13"
+        />
+    <ImageView
+        android:layout_width="80px"
+        android:layout_height="80px"
+        android:onClick="click20"
+        android:id="@+id/imageView20"
+
+        android:layout_below="@id/imageView14"
+        android:layout_toEndOf="@+id/imageView19" />
+    <ImageView
+        android:layout_width="80px"
+        android:layout_height="80px"
+        android:onClick="click21"
+        android:id="@+id/imageView21"
+        android:layout_below="@id/imageView15"
+        android:layout_toEndOf="@+id/imageView20" />
+    <ImageView
+        android:layout_width="80px"
+        android:layout_height="80px"
+        android:onClick="click22"
+        android:id="@+id/imageView22"
+
+        android:layout_below="@id/imageView16"
+        android:layout_toEndOf="@+id/imageView21" />
+    <ImageView
+        android:layout_width="80px"
+        android:layout_height="80px"
+        android:onClick="click23"
+        android:id="@+id/imageView23"
+
+
+        android:layout_below="@id/imageView17"
+        android:layout_toEndOf="@+id/imageView22" />
+    <ImageView
+        android:layout_width="80px"
+        android:layout_height="80px"
+        android:onClick="click24"
+        android:id="@+id/imageView24"
+
+
+        android:layout_below="@id/imageView16"
+        android:layout_toEndOf="@+id/imageView23" />
+
+    <ImageView
+        android:layout_width="80px"
+        android:layout_height="80px"
+        android:onClick="click25"
+        android:id="@+id/imageView25"
+        android:layout_marginLeft="90px"
+        android:layout_below="@id/imageView19"
+        />
+    <ImageView
+        android:layout_width="80px"
+        android:layout_height="80px"
+        android:onClick="click26"
+        android:id="@+id/imageView26"
+
+
+        android:layout_below="@id/imageView20"
+        android:layout_toEndOf="@+id/imageView25" />
+    <ImageView
+        android:layout_width="80px"
+        android:layout_height="80px"
+        android:onClick="click27"
+        android:id="@+id/imageView27"
+
+
+        android:layout_below="@id/imageView21"
+        android:layout_toEndOf="@+id/imageView26" />
+    <ImageView
+        android:layout_width="80px"
+        android:layout_height="80px"
+        android:onClick="click28"
+        android:id="@+id/imageView28"
+
+
+        android:layout_below="@id/imageView22"
+        android:layout_toEndOf="@+id/imageView27" />
+    <ImageView
+        android:layout_width="80px"
+        android:layout_height="80px"
+        android:onClick="click29"
+        android:id="@+id/imageView29"
+
+
+        android:layout_below="@id/imageView23"
+        android:layout_toEndOf="@+id/imageView28" />
+    <ImageView
+        android:layout_width="80px"
+        android:layout_height="80px"
+        android:onClick="click30"
+        android:id="@+id/imageView30"
+
+
+        android:layout_below="@id/imageView22"
+        android:layout_toEndOf="@+id/imageView29" />
+    <ImageView
+        android:layout_width="80px"
+        android:layout_height="80px"
+        android:onClick="click31"
+        android:id="@+id/imageView31"
+        android:layout_marginLeft="90px"
+        android:layout_below="@id/imageView25"
+        />
+    <ImageView
+        android:layout_width="80px"
+        android:layout_height="80px"
+        android:onClick="click32"
+        android:id="@+id/imageView32"
+
+
+        android:layout_below="@id/imageView26"
+        android:layout_toEndOf="@+id/imageView31" />
+    <ImageView
+        android:layout_width="80px"
+        android:layout_height="80px"
+        android:onClick="click33"
+        android:id="@+id/imageView33"
+
+
+        android:layout_below="@id/imageView27"
+        android:layout_toEndOf="@+id/imageView32" />
+    <ImageView
+        android:layout_width="80px"
+        android:layout_height="80px"
+        android:onClick="click34"
+        android:id="@+id/imageView34"
+
+        android:layout_below="@id/imageView28"
+        android:layout_toEndOf="@+id/imageView33" />
+    <ImageView
+        android:layout_width="80px"
+        android:layout_height="80px"
+        android:onClick="click35"
+        android:id="@+id/imageView35"
+
+
+        android:layout_below="@id/imageView29"
+        android:layout_toEndOf="@+id/imageView34" />
+    <ImageView
+        android:layout_width="80px"
+        android:layout_height="80px"
+        android:onClick="click36"
+        android:id="@+id/imageView36"
+
+
+        android:layout_below="@id/imageView28"
+        android:layout_toEndOf="@+id/imageView35" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bombs remaining:"
+        android:id="@+id/textView"
+        android:layout_below="@id/imageView31"
+        android:layout_marginTop="25dp"
+
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:textColor="@android:color/holo_red_dark" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="10"
+        android:id="@+id/textView2"
+        android:layout_marginTop="25dp"
+        android:layout_below="@id/imageView33"
+        android:layout_toEndOf="@+id/textView"
+        android:textColor="@android:color/holo_red_dark"
+        android:textSize="@dimen/abc_dialog_padding_top_material" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Set flag mode:"
+        android:id="@+id/textView5"
+
+        android:textColor="@android:color/holo_blue_dark"
+        android:textSize="@dimen/abc_dialog_padding_top_material"
+        android:layout_below="@+id/textView2"
+         />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView5"
+        android:orientation="horizontal"
+        android:id="@+id/linear">
+
+        <ToggleButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Flag mode"
+            android:id="@+id/toggleButton"
+            android:onClick="onToggleClicked"
+            android:layout_gravity="start"
+
+            />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Too difficult??"
+            android:onClick="Ninex9"
+            android:id="@+id/button2"
+            android:layout_gravity="center"
+
+            />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="RESET"
+            android:onClick="Reset"
+            android:id="@+id/button"
+            android:layout_gravity="end"
+            />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:id="@+id/textView3"
+        android:layout_marginTop="25dp"
+        android:layout_below="@id/linear"
+        android:textColor="@android:color/holo_red_dark"
+        android:textSize="@dimen/abc_dialog_padding_top_material" />
+
+</RelativeLayout>
