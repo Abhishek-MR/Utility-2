@@ -3,12 +3,8 @@
     android:orientation="vertical" android:layout_width="fill_parent"
     android:layout_height="match_parent"
 
-    android:paddingLeft="10dp"
-    android:paddingRight="10dp"
+    android:background="#757575"
 
-    android:paddingTop="10dp"
-    android:background="#00000000"
-    android:paddingBottom="10dp"
 
 
     >
@@ -19,6 +15,7 @@
         android:layout_height="wrap_content"
         android:scrollbars="vertical"
         android:scrollbarSize="4dp"
+        android:background="#757575"
         android:scrollbarStyle="insideOverlay"
         android:scrollIndicators="right"
         android:scrollbarAlwaysDrawVerticalTrack="true"

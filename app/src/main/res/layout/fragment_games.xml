@@ -3,12 +3,8 @@
     android:orientation="vertical" android:layout_width="fill_parent"
     android:layout_height="match_parent"
 
-    android:paddingLeft="10dp"
-    android:paddingRight="10dp"
 
-    android:paddingTop="10dp"
-    android:background="#00000000"
-    android:paddingBottom="10dp"
+    android:background="#757575"
 
     >
 
@@ -48,6 +44,13 @@
         android:layout_width="match_parent"
         android:id="@+id/offrec"
         android:layout_height="wrap_content"
+        android:scrollbars="vertical"
+        android:scrollbarSize="4dp"
+        android:background="#757575"
+        android:scrollbarStyle="insideOverlay"
+        android:scrollIndicators="right"
+        android:scrollbarAlwaysDrawVerticalTrack="true"
+        android:overScrollMode="ifContentScrolls"
         >
 
     </android.support.v7.widget.RecyclerView>
@@ -89,6 +92,13 @@
         android:layout_width="match_parent"
         android:id="@+id/onrec"
         android:layout_height="wrap_content"
+        android:scrollbars="vertical"
+        android:scrollbarSize="4dp"
+        android:background="#757575"
+        android:scrollbarStyle="insideOverlay"
+        android:scrollIndicators="right"
+        android:scrollbarAlwaysDrawVerticalTrack="true"
+        android:overScrollMode="ifContentScrolls"
         >
 
     </android.support.v7.widget.RecyclerView>

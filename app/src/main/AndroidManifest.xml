@@ -74,10 +74,9 @@
             android:name=".SocialMediaTabSel"
             android:theme="@style/MyMaterialTheme" />
         <activity android:name=".MinesweeperAct" />
-
-        <activity android:name=".Ninex9Activity">
-
-        </activity>
+        <activity android:name=".Ninex9Activity"></activity>
+        <activity android:name=".Popup"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

@@ -105,13 +105,6 @@ public class GamesFrag extends Fragment {
         Option option = new Option(R.drawable.logo, "minesweeper");
         options.add(option);
 
-        option = new Option(R.drawable.piano, "piano tiles");
-        options.add(option);
-
-        option = new Option(R.drawable.flappy, "flappy bird");
-        options.add(option);
-
-
 
 
         return options;

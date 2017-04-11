@@ -34,6 +34,8 @@ public class MinesweeperAct extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_minesweeper);
+        overridePendingTransition(R.animator.left_in, R.animator.left_out);
+
         mp1=MediaPlayer.create(MinesweeperAct.this,R.raw.buttonpress);
         count=0;
         ImageView button1=(ImageView)findViewById(R.id.imageView1);
@@ -133,7 +135,7 @@ public class MinesweeperAct extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        startActivity(new Intent(MinesweeperAct.this,MainActivity.class));
+        finish();
 
     }
     public void onToggleClicked(View view)

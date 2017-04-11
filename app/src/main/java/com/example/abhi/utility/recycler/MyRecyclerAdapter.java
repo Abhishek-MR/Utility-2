@@ -15,6 +15,7 @@ import com.example.abhi.utility.Compass;
 import com.example.abhi.utility.Flashlight;
 import com.example.abhi.utility.MinesweeperAct;
 import com.example.abhi.utility.Notes;
+import com.example.abhi.utility.Popup;
 import com.example.abhi.utility.R;
 import com.example.abhi.utility.RulerActivity;
 import com.example.abhi.utility.SocialMediaTabSel;
@@ -67,7 +68,7 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyViewHolder>  {
                         break;
 
                     case "b":
-                        i = new Intent(c, Compass.class);
+                        i = new Intent(c, Popup.class);
                         break;
 
                     case "flashlight":
