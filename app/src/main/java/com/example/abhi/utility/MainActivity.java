@@ -158,9 +158,15 @@ public class MainActivity extends AppCompatActivity {
                             break;
 
                         case "open QR scanner":
-                            i = new Intent(this, Scanner.class);
+                            i = new Intent(this, QRScannerAct.class);
                             break;
 
+                        case "open mirror":
+                            i = new Intent(this, MirrorAct.class);
+                            break;
+
+
+                        //webview
                         case "open Facebook":
                             i = new Intent(this, WebActivity.class);
                             i.putExtra("website", "fb");

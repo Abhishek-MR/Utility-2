@@ -75,13 +75,19 @@
             android:name=".SocialMediaTabSel"
             android:theme="@style/MyMaterialTheme" />
         <activity android:name=".MinesweeperAct" />
+        <activity
+            android:name=".MirrorAct"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
         <activity android:name=".Ninex9Activity" />
         <activity
             android:name=".Popup"
             android:theme="@style/AppTheme.NoActionBar2" />
-        <activity android:name=".Scanner"
+        <activity android:name=".QRScannerAct"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
+
+
     </application>
 
 </manifest>

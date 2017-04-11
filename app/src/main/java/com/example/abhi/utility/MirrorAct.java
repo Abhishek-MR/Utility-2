@@ -15,6 +15,7 @@ public class MirrorAct extends Activity implements TextureView.SurfaceTextureLis
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        overridePendingTransition(R.animator.left_in, R.animator.left_out);
 
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 
@@ -93,5 +94,11 @@ public class MirrorAct extends Activity implements TextureView.SurfaceTextureLis
 
     @Override
     public void onSurfaceTextureSizeChanged(SurfaceTexture surface, int width, int height) {
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        overridePendingTransition(R.animator.right_in, R.animator.right_out);
     }
 }

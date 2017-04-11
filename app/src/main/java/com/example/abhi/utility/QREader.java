@@ -29,6 +29,7 @@ import android.view.SurfaceView;
 import android.view.View;
 import android.view.ViewTreeObserver;
 
+import com.example.abhi.utility.qr.QRDataListener;
 import com.google.android.gms.vision.CameraSource;
 import com.google.android.gms.vision.Detector;
 import com.google.android.gms.vision.barcode.Barcode;

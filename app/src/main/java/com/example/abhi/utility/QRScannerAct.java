@@ -1,6 +1,5 @@
 package com.example.abhi.utility;
 
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -9,7 +8,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class Scanner extends AppCompatActivity {
+import com.example.abhi.utility.qr.QRDataListener;
+
+public class QRScannerAct extends AppCompatActivity {
     private TextView text;
 
     // QREader
@@ -20,6 +21,7 @@ public class Scanner extends AppCompatActivity {
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scanner);
+        overridePendingTransition(R.animator.left_in, R.animator.left_out);
 
         text = (TextView) findViewById(R.id.code_info);
 
@@ -82,5 +84,11 @@ public class Scanner extends AppCompatActivity {
         // Cleanup in onPause()
         // --------------------
         qrEader.releaseAndCleanup();
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        overridePendingTransition(R.animator.right_in, R.animator.right_out);
     }
 }

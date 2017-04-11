@@ -14,12 +14,12 @@ import com.example.abhi.utility.Calendar;
 import com.example.abhi.utility.Compass;
 import com.example.abhi.utility.Flashlight;
 import com.example.abhi.utility.MinesweeperAct;
+import com.example.abhi.utility.MirrorAct;
 import com.example.abhi.utility.Notes;
 import com.example.abhi.utility.Popup;
 import com.example.abhi.utility.R;
 import com.example.abhi.utility.RulerActivity;
-import com.example.abhi.utility.Scanner;
-import com.example.abhi.utility.SocialMediaTabSel;
+import com.example.abhi.utility.QRScannerAct;
 import com.example.abhi.utility.Timer;
 import com.example.abhi.utility.WebActivity;
 import com.example.abhi.utility.calactivities.CalculatorMainAct;
@@ -100,13 +100,19 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyViewHolder>  {
                         break;
 
                     case "qrcode":
-                        i = new Intent(c, Scanner.class);
+                        i = new Intent(c, QRScannerAct.class);
                         break;
 
 
                     case "minesweeper":
                         i = new Intent(c, MinesweeperAct.class);
                         break;
+
+                    case "mirror":
+                        i = new Intent(c, MirrorAct.class);
+                        break;
+
+                    //webview
 
                     case "facebook":
                         i = new Intent(c, WebActivity.class);

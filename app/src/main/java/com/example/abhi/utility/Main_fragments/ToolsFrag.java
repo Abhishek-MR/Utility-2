@@ -63,7 +63,7 @@ public class ToolsFrag extends Fragment {
         option = new Option(R.drawable.qr,"qrcode");
         options.add(option);
 
-        option = new Option(R.drawable.happy,"b");
+        option = new Option(R.drawable.mir,"mirror");
         options.add(option);
 
         return options;

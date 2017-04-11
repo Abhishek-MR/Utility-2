@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.example.abhi.utility;
+package com.example.abhi.utility.qr;
 
 /**
  * The interface Qr data listener.
