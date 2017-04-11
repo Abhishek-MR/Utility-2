@@ -28,7 +28,7 @@ import static android.widget.Toast.LENGTH_LONG;
  * Created by abhi on 26/2/17.
  */
 
-public class WebFrag extends Fragment {
+public class SocialFrag extends Fragment {
 
     public int array[] = {0,0,0};
     int count;
@@ -57,7 +57,7 @@ public class WebFrag extends Fragment {
                 final ArrayList itemsSelected = new ArrayList();
 
 
-                AlertDialog.Builder builder = new AlertDialog.Builder(WebFrag.this.getActivity());
+                AlertDialog.Builder builder = new AlertDialog.Builder(SocialFrag.this.getActivity());
                 builder.setTitle("Select the websites you need");
                 builder.setCancelable(false);
                 builder.setMultiChoiceItems(items, null,
@@ -89,8 +89,7 @@ public class WebFrag extends Fragment {
                                 if (count==0)
                                     Toast.makeText(getActivity(),"Select at least one Website",LENGTH_LONG).show();
                                 else{
-                                Toast.makeText(getActivity(),"fb:"+array[0]+"tw:"+array[1]+"ins:"+array[2],LENGTH_LONG).show();
-                                Intent intent = new Intent(WebFrag.this.getActivity(), SocialMediaTabSel.class);
+                                Intent intent = new Intent(SocialFrag.this.getActivity(), SocialMediaTabSel.class);
                                 intent.putExtra("numbers", array);
                                 startActivity(intent);}
                             }

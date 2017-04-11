@@ -135,6 +135,7 @@ public class MinesweeperAct extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
+        overridePendingTransition(R.animator.right_in, R.animator.right_out);
         finish();
 
     }

@@ -2,24 +2,36 @@ package com.example.abhi.utility;
 
 import android.Manifest;
 import android.app.Activity;
+import android.content.ActivityNotFoundException;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.speech.RecognizerIntent;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CollapsingToolbarLayout;
+import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.View;
+import android.widget.Toast;
 
 import com.example.abhi.utility.Main_fragments.GamesFrag;
-import com.example.abhi.utility.Main_fragments.MainFrag;
+import com.example.abhi.utility.Main_fragments.ToolsFrag;
 import com.example.abhi.utility.Main_fragments.MyFragPagerAdapter;
 import com.example.abhi.utility.Main_fragments.OthersFrag;
-import com.example.abhi.utility.Main_fragments.WebFrag;
+import com.example.abhi.utility.Main_fragments.SocialFrag;
+import com.example.abhi.utility.calactivities.CalculatorMainAct;
+
+import java.util.ArrayList;
+import java.util.Locale;
 
 
 public class MainActivity extends AppCompatActivity {
+    private FloatingActionButton fab;
+    private final int REQ_CODE_SPEECH_INPUT = 100;
 
 
     @Override
@@ -51,14 +63,182 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         initCollapsingToolbar();
 
+        fab = (FloatingActionButton) findViewById(R.id.fab);
+
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                promptSpeechInput();
+            }
+        });
 
 
+    }//end of onCreate
+
+    /**
+     * Showing google speech input dialog
+     * */
+    private void promptSpeechInput() {
+        Intent intent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
+        intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL,
+                RecognizerIntent.LANGUAGE_MODEL_FREE_FORM);
+        intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE, Locale.getDefault());
+        intent.putExtra(RecognizerIntent.EXTRA_PROMPT,
+                getString(R.string.speech_prompt));
+        try {
+            startActivityForResult(intent, REQ_CODE_SPEECH_INPUT);
+        } catch (ActivityNotFoundException a) {
+            Toast.makeText(getApplicationContext(),
+                    getString(R.string.speech_not_supported),
+                    Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    /**
+     * Receiving speech input
+     * */
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        String command="";
+        super.onActivityResult(requestCode, resultCode, data);
+
+        switch (requestCode) {
+            case REQ_CODE_SPEECH_INPUT: {
+                if (resultCode == RESULT_OK && null != data) {
+
+                    ArrayList<String> result = data
+                            .getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
+
+                    command=result.get(0);
+                    int flag = 1;
+                    Intent i = new Intent();
+                    switch (command) {
+                        case "open calculator":
+                            i = new Intent(this, CalculatorMainAct.class);
+                            break;
+
+                        case "b":
+                            i = new Intent(this, Popup.class);
+                            break;
+
+                        case "open flashlight":
+                            i = new Intent(this, Flashlight.class);
+                            break;
+
+                        case "open compass":
+                            i = new Intent(this, Compass.class);
+                            break;
+
+                        case "open timer":
+                            i = new Intent(this, Timer.class);
+                            break;
+
+                        case "open calendar":
+                            i = new Intent(this, Calendar.class);
+                            break;
+
+                        case "open bmi":
+                            i = new Intent(this, BMI.class);
+                            break;
+
+                        case "open notes":
+                            i = new Intent(this, Notes.class);
+                            break;
+                        case "open ruler":
+                            i = new Intent(this, RulerActivity.class);
+                            break;
+
+                        case "open minesweeper":
+                            i = new Intent(this, MinesweeperAct.class);
+                            break;
+
+                        case "open facebook":
+                            i = new Intent(this, WebActivity.class);
+                            i.putExtra("website", "fb");
+                            break;
+                        case "open google":
+                            i = new Intent(this, WebActivity.class);
+                            i.putExtra("website", "go");
+                            break;
+                        case "open twitter":
+                            i = new Intent(this, WebActivity.class);
+                            i.putExtra("website", "tw");
+                            break;
+                        case "open instagram":
+                            i = new Intent(this, WebActivity.class);
+                            i.putExtra("website", "in");
+                            break;
+                        case "open linkedin":
+                            i = new Intent(this, WebActivity.class);
+                            i.putExtra("website", "ln");
+                            break;
+                        case "open quora":
+                            i = new Intent(this, WebActivity.class);
+                            i.putExtra("website", "qu");
+                            break;
+                        case "open news":
+                            i = new Intent(this, WebActivity.class);
+                            i.putExtra("website", "ne");
+                            break;
+                        case "open doctors":
+                            i = new Intent(this, WebActivity.class);
+                            i.putExtra("website", "do");
+                            break;
+                        case "open uber":
+                            i = new Intent(this, WebActivity.class);
+                            i.putExtra("website", "ub");
+                            break;
+                        case "open hotels":
+                            i = new Intent(this, WebActivity.class);
+                            i.putExtra("website", "ho");
+                            break;
+
+                        case "open piano":
+                            i = new Intent(this, WebActivity.class);
+                            i.putExtra("website", "pi");
+                            break;
+
+                        case "open flappy bird":
+                            i = new Intent(this, WebActivity.class);
+                            i.putExtra("website", "flp");
+                            break;
+
+                        case "open stack tower":
+                            i = new Intent(this, WebActivity.class);
+                            i.putExtra("website", "st");
+                            break;
+
+                        case "play a game":
+                            i = new Intent(this, WebActivity.class);
+                            i.putExtra("website", "lp");
+                            break;
+
+                        case "open 2048":
+                            i = new Intent(this, WebActivity.class);
+                            i.putExtra("website", "20");
+                            break;
+
+                        default:
+                            Toast.makeText(this,"Wrong command",Toast.LENGTH_LONG).show();
+                            flag=0;
+                            break;
 
 
+                    }
+                    if (flag==1)
+                    startActivity(i);
+
+                }
+                break;
+            }
+
+        }
     }
 
 
 
+    //requesting permission
     public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {
         switch (requestCode) {
             case 1: {
@@ -76,12 +256,14 @@ public class MainActivity extends AppCompatActivity {
             // permissions this app might request
         }
     }
+
+    //adding tabs
     private void addPages(ViewPager pager)
     {
         MyFragPagerAdapter adapter = new MyFragPagerAdapter(getSupportFragmentManager());
 
-        adapter.addPage(new WebFrag());
-        adapter.addPage(new MainFrag());
+        adapter.addPage(new SocialFrag());
+        adapter.addPage(new ToolsFrag());
         adapter.addPage(new GamesFrag());
         adapter.addPage(new OthersFrag());
 
@@ -150,6 +332,10 @@ public class MainActivity extends AppCompatActivity {
             }
         }
     }
+
+
+
+    //Speech to text
 
 
 

@@ -59,6 +59,7 @@ public class WebActivity extends AppCompatActivity {
         });
 
         switch (data){
+            case "lp" : data = "pi";
             case "fb" : website = "http://www.facebook.com"; break;
             case "tw" : website = "https://twitter.com/login"; break;
             case "in" : website = "https://www.instagram.com/accounts/login/"; break;
@@ -72,6 +73,11 @@ public class WebActivity extends AppCompatActivity {
             case "flp" :website = "http://m.silvergames.com/en/flappy-bird"; break;
             case "st" : website = "http://m.silvergames.com/en/stack-tower"; break;
             case "20" : website = "http://m.silvergames.com/en/2048"; break;
+
+
+
+
+
 
 
 

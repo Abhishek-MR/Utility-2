@@ -123,5 +123,12 @@
     <string name="action_mark_all_read">Mark All as Read</string>
     <string name="privacy_policy">Privacy Policy</string>
 
+    <!-- Speech -->
+    <string name="speech_prompt"><b>Give a command</b>&#8230;\nExample : open calculator</string>
+    <string name="speech_not_supported">Sorry! Your device doesn\'t support speech input</string>
+    <string name="tap_on_mic">Tap on mic to speak</string>
+
+
+
 
 </resources>

@@ -15,7 +15,7 @@ import com.example.abhi.utility.recycler.Option;
 
 import java.util.ArrayList;
 
-public class MainFrag extends Fragment {
+public class ToolsFrag extends Fragment {
 
     @Nullable
     @Override

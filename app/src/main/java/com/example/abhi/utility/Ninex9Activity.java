@@ -36,6 +36,8 @@ public class Ninex9Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ninex9);
+        overridePendingTransition(R.animator.left_in, R.animator.left_out);
+
         mp1=MediaPlayer.create(Ninex9Activity.this,R.raw.buttonpress);
         count = 0;
         ImageView button1 = (ImageView) findViewById(R.id.imageView1);
@@ -221,6 +223,8 @@ public class Ninex9Activity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
+        overridePendingTransition(R.animator.right_in, R.animator.right_out);
+
         finish();
     }
 

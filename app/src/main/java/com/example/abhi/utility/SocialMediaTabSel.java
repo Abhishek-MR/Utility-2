@@ -45,13 +45,11 @@ public class SocialMediaTabSel extends AppCompatActivity {
 
         //data = getIntent().getExtras().getString("website");
         arrayB = getIntent().getExtras().getIntArray("numbers");
-        Toast.makeText(this,"fb:"+arrayB[0]+"ins:"+arrayB[1]+"tw:"+arrayB[2],Toast.LENGTH_SHORT).show();
 
         //counting number of tabs
         for (int i=0;i<3;i++) {
             if (arrayB[i] == 1)            count_tab++;
         }
-        Toast.makeText(this,"count:"+count_tab,Toast.LENGTH_SHORT).show();
 
         setContentView(R.layout.activity_tab_web_social);
         toolbar = (Toolbar) findViewById(R.id.toolbar);

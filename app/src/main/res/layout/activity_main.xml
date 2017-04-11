@@ -45,19 +45,6 @@
 
                 </ImageView>
 
-                <!--
-                <TextView
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Not the app that you deserve, but the one that you need."
-                    android:layout_marginTop="140dp"
-                    android:layout_centerInParent="false"
-                    android:layout_centerHorizontal="true"
-                    android:textColor="#ffffffff"
-                    android:gravity="center"
-                    android:id="@+id/apptext" />
-                    -->
-
             </RelativeLayout>
 
             <android.support.v7.widget.Toolbar
@@ -85,6 +72,17 @@
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
         />
 
+    <android.support.design.widget.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/fab"
+        android:layout_gravity="center|bottom"
+        android:layout_margin="20dp"
+        app:srcCompat="@android:drawable/ic_btn_speak_now"
+        app:borderWidth="2dp"
+        app:fabSize="normal"
+        app:rippleColor="#222"
+        />
 
 </android.support.design.widget.CoordinatorLayout>
 
