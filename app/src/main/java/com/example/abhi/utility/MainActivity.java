@@ -42,6 +42,8 @@ public class MainActivity extends AppCompatActivity {
         RequestUserPermission requestUserPermission = new RequestUserPermission(this);
         requestUserPermission.verifyStoragePermissions();
 
+
+
         ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 1);
 
 
@@ -76,9 +78,10 @@ public class MainActivity extends AppCompatActivity {
 
     }//end of onCreate
 
-    /**
-     * Showing google speech input dialog
-     * */
+
+
+    //Showing google speech input dialog
+
     private void promptSpeechInput() {
         Intent intent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
         intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL,
@@ -95,12 +98,12 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    /**
-     * Receiving speech input
-     * */
+
+    //  Receiving speech input
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        String command="";
+        String command;
         super.onActivityResult(requestCode, resultCode, data);
 
         switch (requestCode) {
@@ -113,6 +116,7 @@ public class MainActivity extends AppCompatActivity {
                     command=result.get(0);
                     int flag = 1;
                     Intent i = new Intent();
+                    //Toast.makeText(this, command, Toast.LENGTH_SHORT).show();
                     switch (command) {
                         case "open calculator":
                             i = new Intent(this, CalculatorMainAct.class);
@@ -153,27 +157,28 @@ public class MainActivity extends AppCompatActivity {
                             i = new Intent(this, MinesweeperAct.class);
                             break;
 
-                        case "open facebook":
+                        case "open QR scanner":
+                            i = new Intent(this, Scanner.class);
+                            break;
+
+                        case "open Facebook":
                             i = new Intent(this, WebActivity.class);
                             i.putExtra("website", "fb");
                             break;
-                        case "open google":
-                            i = new Intent(this, WebActivity.class);
-                            i.putExtra("website", "go");
-                            break;
-                        case "open twitter":
+
+                        case "open Twitter":
                             i = new Intent(this, WebActivity.class);
                             i.putExtra("website", "tw");
                             break;
-                        case "open instagram":
+                        case "open Instagram":
                             i = new Intent(this, WebActivity.class);
                             i.putExtra("website", "in");
                             break;
-                        case "open linkedin":
+                        case "open Linkedin":
                             i = new Intent(this, WebActivity.class);
                             i.putExtra("website", "ln");
                             break;
-                        case "open quora":
+                        case "open Quora":
                             i = new Intent(this, WebActivity.class);
                             i.putExtra("website", "qu");
                             break;
@@ -199,12 +204,12 @@ public class MainActivity extends AppCompatActivity {
                             i.putExtra("website", "pi");
                             break;
 
-                        case "open flappy bird":
+                        case "open flappy Bird":
                             i = new Intent(this, WebActivity.class);
                             i.putExtra("website", "flp");
                             break;
 
-                        case "open stack tower":
+                        case "openstack Tower":
                             i = new Intent(this, WebActivity.class);
                             i.putExtra("website", "st");
                             break;
@@ -214,10 +219,16 @@ public class MainActivity extends AppCompatActivity {
                             i.putExtra("website", "lp");
                             break;
 
-                        case "open 2048":
+                        case "open 2 0 4 8":
                             i = new Intent(this, WebActivity.class);
                             i.putExtra("website", "20");
                             break;
+
+                        case "open redBus":
+                            i = new Intent(this, WebActivity.class);
+                            i.putExtra("website", "rb");
+                            break;
+
 
                         default:
                             Toast.makeText(this,"Wrong command",Toast.LENGTH_LONG).show();

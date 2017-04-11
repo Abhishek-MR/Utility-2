@@ -18,6 +18,7 @@ import com.example.abhi.utility.Notes;
 import com.example.abhi.utility.Popup;
 import com.example.abhi.utility.R;
 import com.example.abhi.utility.RulerActivity;
+import com.example.abhi.utility.Scanner;
 import com.example.abhi.utility.SocialMediaTabSel;
 import com.example.abhi.utility.Timer;
 import com.example.abhi.utility.WebActivity;
@@ -98,6 +99,11 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyViewHolder>  {
                         i = new Intent(c, RulerActivity.class);
                         break;
 
+                    case "qrcode":
+                        i = new Intent(c, Scanner.class);
+                        break;
+
+
                     case "minesweeper":
                         i = new Intent(c, MinesweeperAct.class);
                         break;
@@ -162,6 +168,12 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyViewHolder>  {
                         i = new Intent(c, WebActivity.class);
                         i.putExtra("website", "20");
                         break;
+
+                    case "redbus":
+                        i = new Intent(c, WebActivity.class);
+                        i.putExtra("website", "rb");
+                        break;
+
 
 
 

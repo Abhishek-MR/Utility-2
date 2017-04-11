@@ -128,7 +128,8 @@
     <string name="speech_not_supported">Sorry! Your device doesn\'t support speech input</string>
     <string name="tap_on_mic">Tap on mic to speak</string>
 
-
-
+    <string name="intro_text">Point the camera view to a QR Code to read the information</string>
+    <string name="restart_activity">Restart Activity</string>
+    <string name="stop_start_qreader">Stop QREader</string>
 
 </resources>

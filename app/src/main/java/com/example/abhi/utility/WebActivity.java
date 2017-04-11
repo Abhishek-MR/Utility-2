@@ -73,6 +73,8 @@ public class WebActivity extends AppCompatActivity {
             case "flp" :website = "http://m.silvergames.com/en/flappy-bird"; break;
             case "st" : website = "http://m.silvergames.com/en/stack-tower"; break;
             case "20" : website = "http://m.silvergames.com/en/2048"; break;
+            case "rb" : website = "https://m.redbus.in"; break;
+
 
 
 

@@ -12,19 +12,24 @@
     android:background="@android:color/background_light">
 
 
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/rel1"
+        android:layout_centerHorizontal="true">
     <ImageView
         android:layout_width="80px"
         android:layout_height="80px"
         android:onClick="click1"
         android:id="@+id/imageView1"
-        android:layout_marginLeft="90px"
-        android:layout_marginTop="25dp"
+
+
         />
 
     <ImageView
         android:layout_width="80px"
         android:layout_height="80px"
-        android:layout_marginTop="25dp"
+
         android:onClick="click2"
         android:id="@+id/imageView2"
 
@@ -34,7 +39,6 @@
     <ImageView
         android:layout_width="80px"
         android:layout_height="80px"
-        android:layout_marginTop="25dp"
         android:onClick="click3"
         android:id="@+id/imageView3"
 
@@ -44,7 +48,6 @@
     <ImageView
         android:layout_width="80px"
         android:layout_height="80px"
-        android:layout_marginTop="25dp"
         android:onClick="click4"
         android:id="@+id/imageView4"
 
@@ -54,7 +57,6 @@
     <ImageView
         android:layout_width="80px"
         android:layout_height="80px"
-        android:layout_marginTop="25dp"
         android:onClick="click5"
         android:id="@+id/imageView5"
 
@@ -64,7 +66,6 @@
     <ImageView
         android:layout_width="80px"
         android:layout_height="80px"
-        android:layout_marginTop="25dp"
         android:onClick="click6"
         android:id="@+id/imageView6"
 
@@ -75,7 +76,6 @@
         android:layout_height="80px"
         android:onClick="click7"
         android:id="@+id/imageView7"
-        android:layout_marginLeft="90px"
         android:layout_below="@id/imageView1"
         />
     <ImageView
@@ -128,7 +128,6 @@
         android:layout_height="80px"
         android:onClick="click13"
         android:id="@+id/imageView13"
-        android:layout_marginLeft="90px"
         android:layout_below="@id/imageView7"
         />
     <ImageView
@@ -181,7 +180,6 @@
         android:layout_height="80px"
         android:onClick="click19"
         android:id="@+id/imageView19"
-        android:layout_marginLeft="90px"
         android:layout_below="@id/imageView13"
         />
     <ImageView
@@ -231,7 +229,6 @@
         android:layout_height="80px"
         android:onClick="click25"
         android:id="@+id/imageView25"
-        android:layout_marginLeft="90px"
         android:layout_below="@id/imageView19"
         />
     <ImageView
@@ -284,7 +281,6 @@
         android:layout_height="80px"
         android:onClick="click31"
         android:id="@+id/imageView31"
-        android:layout_marginLeft="90px"
         android:layout_below="@id/imageView25"
         />
     <ImageView
@@ -327,17 +323,16 @@
         android:layout_height="80px"
         android:onClick="click36"
         android:id="@+id/imageView36"
-
-
         android:layout_below="@id/imageView28"
         android:layout_toEndOf="@+id/imageView35" />
+    </RelativeLayout>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Bombs remaining:"
         android:id="@+id/textView"
-        android:layout_below="@id/imageView31"
+        android:layout_below="@id/rel1"
         android:layout_marginTop="25dp"
 
         android:layout_alignParentBottom="true"
@@ -350,7 +345,7 @@
         android:text="10"
         android:id="@+id/textView2"
         android:layout_marginTop="25dp"
-        android:layout_below="@id/imageView33"
+        android:layout_below="@id/rel1"
         android:layout_toEndOf="@+id/textView"
         android:textColor="@android:color/holo_red_dark"
         android:textSize="@dimen/abc_dialog_padding_top_material" />

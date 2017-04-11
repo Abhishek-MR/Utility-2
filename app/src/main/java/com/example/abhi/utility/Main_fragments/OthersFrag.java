@@ -49,7 +49,7 @@ public class OthersFrag extends Fragment {
         option = new Option(R.drawable.icon,"hotels");
         options.add(option);
 
-        option = new Option(R.drawable.icon,"RedBus");
+        option = new Option(R.drawable.icon,"redbus");
         options.add(option);
 
         option = new Option(R.drawable.icon,"--");
