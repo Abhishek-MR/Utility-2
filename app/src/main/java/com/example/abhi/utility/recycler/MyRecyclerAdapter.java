@@ -112,6 +112,7 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyViewHolder>  {
                         i = new Intent(c, MirrorAct.class);
                         break;
 
+
                     //webview
 
                     case "facebook":

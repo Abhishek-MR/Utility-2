@@ -10,6 +10,7 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.view.ViewTreeObserver;
 import android.webkit.GeolocationPermissions;
+import android.webkit.GeolocationPermissions.Callback;
 import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
@@ -83,24 +84,6 @@ public class WebActivity extends AppCompatActivity {
             case "gp" : website = "https://plus.google.com/"; break;
             case "my" : website = "https://myspace.com/"; break;
             case "te" : website = "https://web.telegram.org/#/login"; break;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
             default: break;
         }

@@ -523,5 +523,3 @@ public class NoteActivity extends AppCompatActivity {
         drawingView.startNew();
     }
 }
-
-

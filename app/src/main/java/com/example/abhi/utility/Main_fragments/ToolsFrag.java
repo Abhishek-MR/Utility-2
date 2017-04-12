@@ -66,6 +66,7 @@ public class ToolsFrag extends Fragment {
         option = new Option(R.drawable.mirr,"mirror");
         options.add(option);
 
+
         return options;
 
 

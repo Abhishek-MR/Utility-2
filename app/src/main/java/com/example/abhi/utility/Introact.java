@@ -44,7 +44,6 @@ public class Introact extends AppCompatActivity {
         }
         else
         {
-            sharedPreferences.edit().putInt("app first",appCurrentBuildVersion).apply();
             if (appLastBuildVersion ==0){
                 //first run
                 startActivityIntroact();
