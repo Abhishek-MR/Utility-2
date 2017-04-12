@@ -18,6 +18,7 @@ public class MinesweeperAct extends AppCompatActivity {
 
     int exploded;
     int clicked;
+    int i;
     int flag;
     public int count;
     int flagmode=0;
@@ -141,18 +142,20 @@ public class MinesweeperAct extends AppCompatActivity {
     }
     public void onToggleClicked(View view)
     {
-        boolean checked = ((ToggleButton)view).isChecked();
-
-        if (checked)
         {
-            flagmode=1;
+            if (exploded == 1) {
+            } else {
+                boolean checked = ((ToggleButton) view).isChecked();
 
-        }
-        else
-        {
-            flagmode=0;
-        }
+                if (checked) {
+                    flagmode = 1;
 
+                } else {
+                    flagmode = 0;
+                }
+
+            }
+        }
     }
 
     public int Traverse(Integer element) {
@@ -192,7 +195,6 @@ public class MinesweeperAct extends AppCompatActivity {
         }*/
     public int bombcheck(int num, ImageView button) {
         int flag1 = Traverse(num);
-
         if (flag1 == 0) {
             exploded = 1;
             MediaPlayer mp=MediaPlayer.create(MinesweeperAct.this,R.raw.explode);
@@ -578,34 +580,7 @@ public class MinesweeperAct extends AppCompatActivity {
             proxbombs1 = getprox(clicked);
             if (flag1 == 1)
                 setNumberImage(button1, proxbombs1);
-        /*switch (proxbombs1) {
-            case 0: button1.setImageResource(R.drawable.zero);
-                break;
 
-            case 1:button1.setImageResource(R.drawable.one);
-                    break;
-
-            case 2:button1.setImageResource(R.drawable.two);
-                   break;
-
-            case 3:button1.setImageResource(R.drawable.three);
-                break;
-
-            case 4:button1.setImageResource(R.drawable.four);
-                break;
-
-            case 5:button1.setImageResource(R.drawable.five);
-                break;
-
-            case 6:button1.setImageResource(R.drawable.six);
-                break;
-
-            case 7:button1.setImageResource(R.drawable.seven);
-                break;
-
-            case 8:button1.setImageResource(R.drawable.eight);
-                break;
-        }*/
         }
     }
     }
@@ -640,32 +615,35 @@ public class MinesweeperAct extends AppCompatActivity {
         }
     }
     public void click3(View v) {
-        clicked = 3;
-        mp1.start();
-        ImageView button1 = (ImageView) findViewById(R.id.imageView3);
-        if(flagmode==1 && flagged[clicked]==0)
         {
-            button1.setImageResource(R.drawable.flag);
-            flagged[clicked]=1;
-            updateBombCount();
-            pressed[clicked]=0;
-        }
-        else {
-            pressed[clicked]=1;
-            flagged[clicked]=0;
-            updateBombCount();
-            int flag1 = bombcheck(clicked, button1);
-            int proxbombs1;
-            if(flag1==1)
-                count=updatePressedCount();
-            if (count >= 26) {
-                wincheck();
+            if (exploded == 1) {
+            } else {
+                clicked = 3;
+                mp1.start();
+                ImageView button1 = (ImageView) findViewById(R.id.imageView3);
+                if (flagmode == 1 && flagged[clicked] == 0) {
+                    button1.setImageResource(R.drawable.flag);
+                    flagged[clicked] = 1;
+                    updateBombCount();
+                    pressed[clicked] = 0;
+                } else {
+                    pressed[clicked] = 1;
+                    flagged[clicked] = 0;
+                    updateBombCount();
+                    int flag1 = bombcheck(clicked, button1);
+                    int proxbombs1;
+                    if (flag1 == 1)
+                        count = updatePressedCount();
+                    if (count >= 26) {
+                        wincheck();
+                    }
+                    proxbombs1 = getprox(clicked);
+                    if (flag1 == 1)
+                        setNumberImage(button1, proxbombs1);
+                }
+
             }
-            proxbombs1 = getprox(clicked);
-            if (flag1 == 1)
-                setNumberImage(button1, proxbombs1);
-        }
-    }
+        }}
     public void click4(View v) {
         clicked = 4;
         mp1.start();
@@ -695,6 +673,9 @@ public class MinesweeperAct extends AppCompatActivity {
         }
     }
     public void click5(View v) {
+        {   if (exploded==1)
+        {}
+        else {
         clicked = 5;
         mp1.start();
         ImageView button1 = (ImageView) findViewById(R.id.imageView5);
@@ -720,9 +701,12 @@ public class MinesweeperAct extends AppCompatActivity {
             proxbombs1 = getprox(clicked);
             if (flag1 == 1)
                 setNumberImage(button1, proxbombs1);
-        }
+        }}}
     }
     public void click6(View v) {
+        {   if (exploded==1)
+        {}
+        else {
         clicked = 6;
         mp1.start();
         ImageView button1 = (ImageView) findViewById(R.id.imageView6);
@@ -748,9 +732,12 @@ public class MinesweeperAct extends AppCompatActivity {
             proxbombs1 = getprox(clicked);
             if (flag1 == 1)
                 setNumberImage(button1, proxbombs1);
-        }
+        }}}
     }
     public void click7(View v) {
+        {   if (exploded==1)
+        {}
+        else {
         clicked = 7;
         mp1.start();
         ImageView button1 = (ImageView) findViewById(R.id.imageView7);
@@ -776,9 +763,12 @@ public class MinesweeperAct extends AppCompatActivity {
             proxbombs1 = getprox(clicked);
             if (flag1 == 1)
                 setNumberImage(button1, proxbombs1);
-        }
+        }}}
     }
     public void click8(View v) {
+        {   if (exploded==1)
+        {}
+        else {
         clicked = 8;
         mp1.start();
         ImageView button1 = (ImageView) findViewById(R.id.imageView8);
@@ -805,8 +795,11 @@ public class MinesweeperAct extends AppCompatActivity {
             if (flag1 == 1)
                 setNumberImage(button1, proxbombs1);
         }
-    }
+    }}}
     public void click9(View v) {
+        {   if (exploded==1)
+        {}
+        else {
         clicked = 9;
         mp1.start();
         ImageView button1 = (ImageView) findViewById(R.id.imageView9);
@@ -833,8 +826,11 @@ public class MinesweeperAct extends AppCompatActivity {
             if (flag1 == 1)
                 setNumberImage(button1, proxbombs1);
         }
-    }
+    }}}
     public void click10(View v) {
+        {   if (exploded==1)
+        {}
+        else {
         clicked = 10;
         mp1.start();
         ImageView button1 = (ImageView) findViewById(R.id.imageView10);
@@ -859,9 +855,12 @@ public class MinesweeperAct extends AppCompatActivity {
             proxbombs1 = getprox(clicked);
             if (flag1 == 1)
                 setNumberImage(button1, proxbombs1);
-        }
+        }}}
     }
     public void click11(View v) {
+        {   if (exploded==1)
+        {}
+        else {
         clicked = 11;
         mp1.start();
         ImageView button1 = (ImageView) findViewById(R.id.imageView11);
@@ -886,9 +885,12 @@ public class MinesweeperAct extends AppCompatActivity {
             proxbombs1 = getprox(clicked);
             if (flag1 == 1)
                 setNumberImage(button1, proxbombs1);
-        }
+        }}}
     }
     public void click12(View v) {
+        {   if (exploded==1)
+        {}
+        else {
         clicked = 12;
         mp1.start();
         ImageView button1 = (ImageView) findViewById(R.id.imageView12);
@@ -913,9 +915,12 @@ public class MinesweeperAct extends AppCompatActivity {
             proxbombs1 = getprox(clicked);
             if (flag1 == 1)
                 setNumberImage(button1, proxbombs1);
-        }
+        }}}
     }
     public void click13(View v) {
+        {   if (exploded==1)
+        {}
+        else {
         clicked = 13;
         mp1.start();
         ImageView button1 = (ImageView) findViewById(R.id.imageView13);
@@ -940,9 +945,12 @@ public class MinesweeperAct extends AppCompatActivity {
             proxbombs1 = getprox(clicked);
             if (flag1 == 1)
                 setNumberImage(button1, proxbombs1);
-        }
+        }}}
     }
     public void click14(View v) {
+        {   if (exploded==1)
+        {}
+        else {
         clicked = 14;
         mp1.start();
         ImageView button1 = (ImageView) findViewById(R.id.imageView14);
@@ -967,9 +975,12 @@ public class MinesweeperAct extends AppCompatActivity {
             proxbombs1 = getprox(clicked);
             if (flag1 == 1)
                 setNumberImage(button1, proxbombs1);
-        }
+        }}}
     }
     public void click15(View v) {
+        {   if (exploded==1)
+        {}
+        else {
         clicked = 15;
         mp1.start();
         ImageView button1 = (ImageView) findViewById(R.id.imageView15);
@@ -994,9 +1005,12 @@ public class MinesweeperAct extends AppCompatActivity {
             proxbombs1 = getprox(clicked);
             if (flag1 == 1)
                 setNumberImage(button1, proxbombs1);
-        }
+        }}}
     }
     public void click16(View v) {
+        {   if (exploded==1)
+    {}
+    else {
         clicked = 16;
         mp1.start();
         ImageView button1 = (ImageView) findViewById(R.id.imageView16);
@@ -1021,9 +1035,12 @@ public class MinesweeperAct extends AppCompatActivity {
             proxbombs1 = getprox(clicked);
             if (flag1 == 1)
                 setNumberImage(button1, proxbombs1);
-        }
+        }}}
     }
     public void click17(View v) {
+        {   if (exploded==1)
+        {}
+        else {
         clicked = 17;
         mp1.start();
         ImageView button1 = (ImageView) findViewById(R.id.imageView17);
@@ -1048,36 +1065,41 @@ public class MinesweeperAct extends AppCompatActivity {
             proxbombs1 = getprox(clicked);
             if (flag1 == 1)
                 setNumberImage(button1, proxbombs1);
-        }
+        }}}
     }
     public void click18(View v) {
-        clicked = 18;
-        mp1.start();
-        ImageView button1 = (ImageView) findViewById(R.id.imageView18);
-        if(flagmode==1 && flagged[clicked]==0)
-        {
-            button1.setImageResource(R.drawable.flag);
-            flagged[clicked]=1;
-            updateBombCount();
-            pressed[clicked]=0;
-        }
+        {   if (exploded==1)
+        {}
         else {
-            pressed[clicked]=1;
-            flagged[clicked]=0;
-            updateBombCount();
-            int flag1 = bombcheck(clicked, button1);
-            int proxbombs1;
-            if(flag1==1)
-                count=updatePressedCount();
-            if (count >= 26) {
-                wincheck();
+            clicked = 18;
+            mp1.start();
+            ImageView button1 = (ImageView) findViewById(R.id.imageView18);
+            if (flagmode == 1 && flagged[clicked] == 0) {
+                button1.setImageResource(R.drawable.flag);
+                flagged[clicked] = 1;
+                updateBombCount();
+                pressed[clicked] = 0;
+            } else {
+                pressed[clicked] = 1;
+                flagged[clicked] = 0;
+                updateBombCount();
+                int flag1 = bombcheck(clicked, button1);
+                int proxbombs1;
+                if (flag1 == 1)
+                    count = updatePressedCount();
+                if (count >= 26) {
+                    wincheck();
+                }
+                proxbombs1 = getprox(clicked);
+                if (flag1 == 1)
+                    setNumberImage(button1, proxbombs1);
             }
-            proxbombs1 = getprox(clicked);
-            if (flag1 == 1)
-                setNumberImage(button1, proxbombs1);
-        }
+        }}
     }
     public void click19(View v) {
+        {   if (exploded==1)
+        {}
+        else {
         clicked = 19;
         mp1.start();
         ImageView button1 = (ImageView) findViewById(R.id.imageView19);
@@ -1103,8 +1125,11 @@ public class MinesweeperAct extends AppCompatActivity {
             if (flag1 == 1)
                 setNumberImage(button1, proxbombs1);
         }
-    }
+    }}}
     public void click20(View v) {
+        {   if (exploded==1)
+        {}
+        else {
         clicked = 20;
         mp1.start();
         ImageView button1 = (ImageView) findViewById(R.id.imageView20);
@@ -1129,63 +1154,70 @@ public class MinesweeperAct extends AppCompatActivity {
             proxbombs1 = getprox(clicked);
             if (flag1 == 1)
                 setNumberImage(button1, proxbombs1);
-        }
+        }}}
     }
     public void click21(View v) {
-        clicked = 21;
-        mp1.start();
-        ImageView button1 = (ImageView) findViewById(R.id.imageView21);
-        if(flagmode==1 && flagged[clicked]==0)
-        {
-            button1.setImageResource(R.drawable.flag);
-            flagged[clicked]=1;
-            updateBombCount();
-            pressed[clicked]=0;
-        }
+        {   if (exploded==1)
+        {}
         else {
-            pressed[clicked]=1;
-            flagged[clicked]=0;
-            updateBombCount();
-            int flag1 = bombcheck(clicked, button1);
-            int proxbombs1;
-            if(flag1==1)
-                count=updatePressedCount();
-            if (count >= 26) {
-                wincheck();
+            clicked = 21;
+            mp1.start();
+            ImageView button1 = (ImageView) findViewById(R.id.imageView21);
+            if (flagmode == 1 && flagged[clicked] == 0) {
+                button1.setImageResource(R.drawable.flag);
+                flagged[clicked] = 1;
+                updateBombCount();
+                pressed[clicked] = 0;
+            } else {
+                pressed[clicked] = 1;
+                flagged[clicked] = 0;
+                updateBombCount();
+                int flag1 = bombcheck(clicked, button1);
+                int proxbombs1;
+                if (flag1 == 1)
+                    count = updatePressedCount();
+                if (count >= 26) {
+                    wincheck();
+                }
+                proxbombs1 = getprox(clicked);
+                if (flag1 == 1)
+                    setNumberImage(button1, proxbombs1);
             }
-            proxbombs1 = getprox(clicked);
-            if (flag1 == 1)
-                setNumberImage(button1, proxbombs1);
-        }
+        }}
     }
     public void click22(View v) {
-        clicked = 22;
-        mp1.start();
-        ImageView button1 = (ImageView) findViewById(R.id.imageView22);
-        if(flagmode==1 && flagged[clicked]==0)
-        {
-            button1.setImageResource(R.drawable.flag);
-            flagged[clicked]=1;
-            updateBombCount();
-            pressed[clicked]=0;
-        }
+        {   if (exploded==1)
+        {}
         else {
-            pressed[clicked]=1;
-            flagged[clicked]=0;
-            updateBombCount();
-            int flag1 = bombcheck(clicked, button1);
-            int proxbombs1;
-            if(flag1==1)
-                count=updatePressedCount();
-            if (count >= 26) {
-                wincheck();
+            clicked = 22;
+            mp1.start();
+            ImageView button1 = (ImageView) findViewById(R.id.imageView22);
+            if (flagmode == 1 && flagged[clicked] == 0) {
+                button1.setImageResource(R.drawable.flag);
+                flagged[clicked] = 1;
+                updateBombCount();
+                pressed[clicked] = 0;
+            } else {
+                pressed[clicked] = 1;
+                flagged[clicked] = 0;
+                updateBombCount();
+                int flag1 = bombcheck(clicked, button1);
+                int proxbombs1;
+                if (flag1 == 1)
+                    count = updatePressedCount();
+                if (count >= 26) {
+                    wincheck();
+                }
+                proxbombs1 = getprox(clicked);
+                if (flag1 == 1)
+                    setNumberImage(button1, proxbombs1);
             }
-            proxbombs1 = getprox(clicked);
-            if (flag1 == 1)
-                setNumberImage(button1, proxbombs1);
-        }
+        }}
     }
     public void click23(View v) {
+        {   if (exploded==1)
+        {}
+        else {
         clicked = 23;
         mp1.start();
         ImageView button1 = (ImageView) findViewById(R.id.imageView23);
@@ -1210,9 +1242,12 @@ public class MinesweeperAct extends AppCompatActivity {
             proxbombs1 = getprox(clicked);
             if (flag1 == 1)
                 setNumberImage(button1, proxbombs1);
-        }
+        }}}
     }
     public void click24(View v) {
+        {   if (exploded==1)
+        {}
+        else {
         clicked = 24;
         mp1.start();
         ImageView button1 = (ImageView) findViewById(R.id.imageView24);
@@ -1238,35 +1273,40 @@ public class MinesweeperAct extends AppCompatActivity {
             if (flag1 == 1)
                 setNumberImage(button1, proxbombs1);
         }
-    }
+    }}}
     public void click25(View v) {
-        clicked = 25;
-        mp1.start();
-        ImageView button1 = (ImageView) findViewById(R.id.imageView25);
-        if(flagmode==1 && flagged[clicked]==0)
-        {
-            button1.setImageResource(R.drawable.flag);
-            flagged[clicked]=1;
-            updateBombCount();
-            pressed[clicked]=0;
-        }
+        {   if (exploded==1)
+        {}
         else {
-            pressed[clicked]=1;
-            flagged[clicked]=0;
-            updateBombCount();
-            int flag1 = bombcheck(clicked, button1);
-            int proxbombs1;
-            if(flag1==1)
-                count=updatePressedCount();
-            if (count >= 26) {
-                wincheck();
+            clicked = 25;
+            mp1.start();
+            ImageView button1 = (ImageView) findViewById(R.id.imageView25);
+            if (flagmode == 1 && flagged[clicked] == 0) {
+                button1.setImageResource(R.drawable.flag);
+                flagged[clicked] = 1;
+                updateBombCount();
+                pressed[clicked] = 0;
+            } else {
+                pressed[clicked] = 1;
+                flagged[clicked] = 0;
+                updateBombCount();
+                int flag1 = bombcheck(clicked, button1);
+                int proxbombs1;
+                if (flag1 == 1)
+                    count = updatePressedCount();
+                if (count >= 26) {
+                    wincheck();
+                }
+                proxbombs1 = getprox(clicked);
+                if (flag1 == 1)
+                    setNumberImage(button1, proxbombs1);
             }
-            proxbombs1 = getprox(clicked);
-            if (flag1 == 1)
-                setNumberImage(button1, proxbombs1);
-        }
+        }}
     }
     public void click26(View v) {
+        {   if (exploded==1)
+        {}
+        else {
         clicked = 26;
         mp1.start();
         ImageView button1 = (ImageView) findViewById(R.id.imageView26);
@@ -1292,8 +1332,11 @@ public class MinesweeperAct extends AppCompatActivity {
             if (flag1 == 1)
                 setNumberImage(button1, proxbombs1);
         }
-    }
+    }}}
     public void click27(View v) {
+        {   if (exploded==1)
+        {}
+        else {
         clicked = 27;
         mp1.start();
         ImageView button1 = (ImageView) findViewById(R.id.imageView27);
@@ -1318,9 +1361,12 @@ public class MinesweeperAct extends AppCompatActivity {
             proxbombs1 = getprox(clicked);
             if (flag1 == 1)
                 setNumberImage(button1, proxbombs1);
-        }
+        }}}
     }
     public void click28(View v) {
+        {   if (exploded==1)
+        {}
+        else {
         clicked = 28;
         mp1.start();
         ImageView button1 = (ImageView) findViewById(R.id.imageView28);
@@ -1345,9 +1391,12 @@ public class MinesweeperAct extends AppCompatActivity {
             proxbombs1 = getprox(clicked);
             if (flag1 == 1)
                 setNumberImage(button1, proxbombs1);
-        }
+        }}}
     }
     public void click29(View v) {
+        {   if (exploded==1)
+        {}
+        else {
         clicked = 29;
         mp1.start();
         ImageView button1 = (ImageView) findViewById(R.id.imageView29);
@@ -1372,9 +1421,12 @@ public class MinesweeperAct extends AppCompatActivity {
             proxbombs1 = getprox(clicked);
             if (flag1 == 1)
                 setNumberImage(button1, proxbombs1);
-        }
+        }}}
     }
     public void click30(View v) {
+        {   if (exploded==1)
+        {}
+        else {
         clicked = 30;
         mp1.start();
         ImageView button1 = (ImageView) findViewById(R.id.imageView30);
@@ -1399,9 +1451,12 @@ public class MinesweeperAct extends AppCompatActivity {
             proxbombs1 = getprox(clicked);
             if (flag1 == 1)
                 setNumberImage(button1, proxbombs1);
-        }
+        }}}
     }
     public void click31(View v) {
+        {   if (exploded==1)
+        {}
+        else {
         clicked = 31;
         mp1.start();
         ImageView button1 = (ImageView) findViewById(R.id.imageView31);
@@ -1426,90 +1481,99 @@ public class MinesweeperAct extends AppCompatActivity {
             proxbombs1 = getprox(clicked);
             if (flag1 == 1)
                 setNumberImage(button1, proxbombs1);
-        }
+        }}}
     }
     public void click32(View v) {
-        clicked = 32;
-        mp1.start();
-        ImageView button1 = (ImageView) findViewById(R.id.imageView32);
-        if(flagmode==1 && flagged[clicked]==0)
-        {
-            button1.setImageResource(R.drawable.flag);
-            flagged[clicked]=1;
-            updateBombCount();
-            pressed[clicked]=0;
-        }
+        {   if (exploded==1)
+        {}
         else {
-            pressed[clicked]=1;
-            flagged[clicked]=0;
-            updateBombCount();
-            int flag1 = bombcheck(clicked, button1);
-            int proxbombs1;
-            if(flag1==1)
-                count=updatePressedCount();
-            if (count >= 26) {
-                wincheck();
+            clicked = 32;
+            mp1.start();
+            ImageView button1 = (ImageView) findViewById(R.id.imageView32);
+            if (flagmode == 1 && flagged[clicked] == 0) {
+                button1.setImageResource(R.drawable.flag);
+                flagged[clicked] = 1;
+                updateBombCount();
+                pressed[clicked] = 0;
+            } else {
+                pressed[clicked] = 1;
+                flagged[clicked] = 0;
+                updateBombCount();
+                int flag1 = bombcheck(clicked, button1);
+                int proxbombs1;
+                if (flag1 == 1)
+                    count = updatePressedCount();
+                if (count >= 26) {
+                    wincheck();
+                }
+                proxbombs1 = getprox(clicked);
+                if (flag1 == 1)
+                    setNumberImage(button1, proxbombs1);
             }
-            proxbombs1 = getprox(clicked);
-            if (flag1 == 1)
-                setNumberImage(button1, proxbombs1);
-        }
+        }}
     }
     public void click33(View v) {
-        clicked = 33;
-        mp1.start();
-        ImageView button1 = (ImageView) findViewById(R.id.imageView33);
-        if(flagmode==1 && flagged[clicked]==0)
-        {
-            button1.setImageResource(R.drawable.flag);
-            flagged[clicked]=1;
-            updateBombCount();
-            pressed[clicked]=0;
-        }
+        {   if (exploded==1)
+        {}
         else {
-            pressed[clicked]=1;
-            flagged[clicked]=0;
-            updateBombCount();
-            int flag1 = bombcheck(clicked, button1);
-            int proxbombs1;
-            if(flag1==1)
-                count=updatePressedCount();
-            if (count >= 26) {
-                wincheck();
+            clicked = 33;
+            mp1.start();
+            ImageView button1 = (ImageView) findViewById(R.id.imageView33);
+            if (flagmode == 1 && flagged[clicked] == 0) {
+                button1.setImageResource(R.drawable.flag);
+                flagged[clicked] = 1;
+                updateBombCount();
+                pressed[clicked] = 0;
+            } else {
+                pressed[clicked] = 1;
+                flagged[clicked] = 0;
+                updateBombCount();
+                int flag1 = bombcheck(clicked, button1);
+                int proxbombs1;
+                if (flag1 == 1)
+                    count = updatePressedCount();
+                if (count >= 26) {
+                    wincheck();
+                }
+                proxbombs1 = getprox(clicked);
+                if (flag1 == 1)
+                    setNumberImage(button1, proxbombs1);
             }
-            proxbombs1 = getprox(clicked);
-            if (flag1 == 1)
-                setNumberImage(button1, proxbombs1);
-        }
+        }}
     }
     public void click34(View v) {
-        clicked = 34;
-        mp1.start();
-        ImageView button1 = (ImageView) findViewById(R.id.imageView34);
-        if(flagmode==1 && flagged[clicked]==0)
         {
-            button1.setImageResource(R.drawable.flag);
-            flagged[clicked]=1;
-            updateBombCount();
-            pressed[clicked]=0;
-        }
-        else {
-            pressed[clicked]=1;
-            flagged[clicked]=0;
-            updateBombCount();
-            int flag1 = bombcheck(clicked, button1);
-            int proxbombs1;
-            if(flag1==1)
-                count=updatePressedCount();
-            if (count >= 26) {
-                wincheck();
+            if (exploded == 1) {
+            } else {
+                clicked = 34;
+                mp1.start();
+                ImageView button1 = (ImageView) findViewById(R.id.imageView34);
+                if (flagmode == 1 && flagged[clicked] == 0) {
+                    button1.setImageResource(R.drawable.flag);
+                    flagged[clicked] = 1;
+                    updateBombCount();
+                    pressed[clicked] = 0;
+                } else {
+                    pressed[clicked] = 1;
+                    flagged[clicked] = 0;
+                    updateBombCount();
+                    int flag1 = bombcheck(clicked, button1);
+                    int proxbombs1;
+                    if (flag1 == 1)
+                        count = updatePressedCount();
+                    if (count >= 26) {
+                        wincheck();
+                    }
+                    proxbombs1 = getprox(clicked);
+                    if (flag1 == 1)
+                        setNumberImage(button1, proxbombs1);
+                }
             }
-            proxbombs1 = getprox(clicked);
-            if (flag1 == 1)
-                setNumberImage(button1, proxbombs1);
-        }
-    }
+        }}
     public void click35(View v) {
+        {   if (exploded==1)
+        {}
+        else {
         clicked = 35;
         mp1.start();
         ImageView button1 = (ImageView) findViewById(R.id.imageView35);
@@ -1534,9 +1598,12 @@ public class MinesweeperAct extends AppCompatActivity {
             proxbombs1 = getprox(clicked);
             if (flag1 == 1)
                 setNumberImage(button1, proxbombs1);
-        }
+        }}}
     }
     public void click36(View v) {
+        {   if (exploded==1)
+        {}
+        else {
         clicked = 36;
         mp1.start();
         ImageView button1 = (ImageView) findViewById(R.id.imageView36);
@@ -1562,7 +1629,7 @@ public class MinesweeperAct extends AppCompatActivity {
             if (flag1 == 1)
                 setNumberImage(button1, proxbombs1);
 
-        }
+        }}}
     }
     public void Reset(View view)
     {
@@ -1622,86 +1689,87 @@ public class MinesweeperAct extends AppCompatActivity {
         return number;
 
     }
-    public void Ninex9(View view)
+    //public void Ninex9(View view)
     {
-        Intent i = new Intent(this, Ninex9Activity.class);
-        startActivity(i);
+        //Intent i = new Intent(this, Ninex9Activity.class);
+        //startActivity(i);
     }
-    public void resetLayout()
-    {
-        ImageView button1=(ImageView)findViewById(R.id.imageView1);
-        ImageView button2=(ImageView)findViewById(R.id.imageView2);
-        ImageView button3=(ImageView)findViewById(R.id.imageView3);
-        ImageView button4=(ImageView)findViewById(R.id.imageView4);
-        ImageView button5=(ImageView)findViewById(R.id.imageView5);
-        ImageView button6=(ImageView)findViewById(R.id.imageView6);
-        ImageView button7=(ImageView)findViewById(R.id.imageView7);
-        ImageView button8=(ImageView)findViewById(R.id.imageView8);
-        ImageView button9=(ImageView)findViewById(R.id.imageView9);
-        ImageView button10=(ImageView)findViewById(R.id.imageView10);
-        ImageView button11=(ImageView)findViewById(R.id.imageView11);
-        ImageView button12=(ImageView)findViewById(R.id.imageView12);
-        ImageView button13=(ImageView)findViewById(R.id.imageView13);
-        ImageView button14=(ImageView)findViewById(R.id.imageView14);
-        ImageView button15=(ImageView)findViewById(R.id.imageView15);
-        ImageView button16=(ImageView)findViewById(R.id.imageView16);
-        ImageView button17=(ImageView)findViewById(R.id.imageView17);
-        ImageView button18=(ImageView)findViewById(R.id.imageView18);
-        ImageView button19=(ImageView)findViewById(R.id.imageView19);
-        ImageView button20=(ImageView)findViewById(R.id.imageView20);
-        ImageView button21=(ImageView)findViewById(R.id.imageView21);
-        ImageView button22=(ImageView)findViewById(R.id.imageView22);
-        ImageView button23=(ImageView)findViewById(R.id.imageView23);
-        ImageView button24=(ImageView)findViewById(R.id.imageView24);
-        ImageView button25=(ImageView)findViewById(R.id.imageView25);
-        ImageView button26=(ImageView)findViewById(R.id.imageView26);
-        ImageView button27=(ImageView)findViewById(R.id.imageView27);
-        ImageView button28=(ImageView)findViewById(R.id.imageView28);
-        ImageView button29=(ImageView)findViewById(R.id.imageView29);
-        ImageView button30=(ImageView)findViewById(R.id.imageView30);
-        ImageView button31=(ImageView)findViewById(R.id.imageView31);
-        ImageView button32=(ImageView)findViewById(R.id.imageView32);
-        ImageView button33=(ImageView)findViewById(R.id.imageView33);
-        ImageView button34=(ImageView)findViewById(R.id.imageView34);
-        ImageView button35=(ImageView)findViewById(R.id.imageView35);
-        ImageView button36=(ImageView)findViewById(R.id.imageView36);
+    public void resetLayout() {
+        if (exploded == 1) {
+        } else {
+            ImageView button1 = (ImageView) findViewById(R.id.imageView1);
+            ImageView button2 = (ImageView) findViewById(R.id.imageView2);
+            ImageView button3 = (ImageView) findViewById(R.id.imageView3);
+            ImageView button4 = (ImageView) findViewById(R.id.imageView4);
+            ImageView button5 = (ImageView) findViewById(R.id.imageView5);
+            ImageView button6 = (ImageView) findViewById(R.id.imageView6);
+            ImageView button7 = (ImageView) findViewById(R.id.imageView7);
+            ImageView button8 = (ImageView) findViewById(R.id.imageView8);
+            ImageView button9 = (ImageView) findViewById(R.id.imageView9);
+            ImageView button10 = (ImageView) findViewById(R.id.imageView10);
+            ImageView button11 = (ImageView) findViewById(R.id.imageView11);
+            ImageView button12 = (ImageView) findViewById(R.id.imageView12);
+            ImageView button13 = (ImageView) findViewById(R.id.imageView13);
+            ImageView button14 = (ImageView) findViewById(R.id.imageView14);
+            ImageView button15 = (ImageView) findViewById(R.id.imageView15);
+            ImageView button16 = (ImageView) findViewById(R.id.imageView16);
+            ImageView button17 = (ImageView) findViewById(R.id.imageView17);
+            ImageView button18 = (ImageView) findViewById(R.id.imageView18);
+            ImageView button19 = (ImageView) findViewById(R.id.imageView19);
+            ImageView button20 = (ImageView) findViewById(R.id.imageView20);
+            ImageView button21 = (ImageView) findViewById(R.id.imageView21);
+            ImageView button22 = (ImageView) findViewById(R.id.imageView22);
+            ImageView button23 = (ImageView) findViewById(R.id.imageView23);
+            ImageView button24 = (ImageView) findViewById(R.id.imageView24);
+            ImageView button25 = (ImageView) findViewById(R.id.imageView25);
+            ImageView button26 = (ImageView) findViewById(R.id.imageView26);
+            ImageView button27 = (ImageView) findViewById(R.id.imageView27);
+            ImageView button28 = (ImageView) findViewById(R.id.imageView28);
+            ImageView button29 = (ImageView) findViewById(R.id.imageView29);
+            ImageView button30 = (ImageView) findViewById(R.id.imageView30);
+            ImageView button31 = (ImageView) findViewById(R.id.imageView31);
+            ImageView button32 = (ImageView) findViewById(R.id.imageView32);
+            ImageView button33 = (ImageView) findViewById(R.id.imageView33);
+            ImageView button34 = (ImageView) findViewById(R.id.imageView34);
+            ImageView button35 = (ImageView) findViewById(R.id.imageView35);
+            ImageView button36 = (ImageView) findViewById(R.id.imageView36);
 
-        button1.setImageResource(R.drawable.squarebutton);
-        button2.setImageResource(R.drawable.squarebutton);
-        button3.setImageResource(R.drawable.squarebutton);
-        button4.setImageResource(R.drawable.squarebutton);
-        button5.setImageResource(R.drawable.squarebutton);
-        button6.setImageResource(R.drawable.squarebutton);
-        button7.setImageResource(R.drawable.squarebutton);
-        button8.setImageResource(R.drawable.squarebutton);
-        button9.setImageResource(R.drawable.squarebutton);
-        button10.setImageResource(R.drawable.squarebutton);
-        button11.setImageResource(R.drawable.squarebutton);
-        button12.setImageResource(R.drawable.squarebutton);
-        button13.setImageResource(R.drawable.squarebutton);
-        button14.setImageResource(R.drawable.squarebutton);
-        button15.setImageResource(R.drawable.squarebutton);
-        button16.setImageResource(R.drawable.squarebutton);
-        button17.setImageResource(R.drawable.squarebutton);
-        button18.setImageResource(R.drawable.squarebutton);
-        button19.setImageResource(R.drawable.squarebutton);
-        button20.setImageResource(R.drawable.squarebutton);
-        button21.setImageResource(R.drawable.squarebutton);
-        button22.setImageResource(R.drawable.squarebutton);
-        button23.setImageResource(R.drawable.squarebutton);
-        button24.setImageResource(R.drawable.squarebutton);
-        button25.setImageResource(R.drawable.squarebutton);
-        button26.setImageResource(R.drawable.squarebutton);
-        button27.setImageResource(R.drawable.squarebutton);
-        button28.setImageResource(R.drawable.squarebutton);
-        button29.setImageResource(R.drawable.squarebutton);
-        button30.setImageResource(R.drawable.squarebutton);
-        button31.setImageResource(R.drawable.squarebutton);
-        button32.setImageResource(R.drawable.squarebutton);
-        button33.setImageResource(R.drawable.squarebutton);
-        button34.setImageResource(R.drawable.squarebutton);
-        button35.setImageResource(R.drawable.squarebutton);
-        button36.setImageResource(R.drawable.squarebutton);
+            button1.setImageResource(R.drawable.squarebutton);
+            button2.setImageResource(R.drawable.squarebutton);
+            button3.setImageResource(R.drawable.squarebutton);
+            button4.setImageResource(R.drawable.squarebutton);
+            button5.setImageResource(R.drawable.squarebutton);
+            button6.setImageResource(R.drawable.squarebutton);
+            button7.setImageResource(R.drawable.squarebutton);
+            button8.setImageResource(R.drawable.squarebutton);
+            button9.setImageResource(R.drawable.squarebutton);
+            button10.setImageResource(R.drawable.squarebutton);
+            button11.setImageResource(R.drawable.squarebutton);
+            button12.setImageResource(R.drawable.squarebutton);
+            button13.setImageResource(R.drawable.squarebutton);
+            button14.setImageResource(R.drawable.squarebutton);
+            button15.setImageResource(R.drawable.squarebutton);
+            button16.setImageResource(R.drawable.squarebutton);
+            button17.setImageResource(R.drawable.squarebutton);
+            button18.setImageResource(R.drawable.squarebutton);
+            button19.setImageResource(R.drawable.squarebutton);
+            button20.setImageResource(R.drawable.squarebutton);
+            button21.setImageResource(R.drawable.squarebutton);
+            button22.setImageResource(R.drawable.squarebutton);
+            button23.setImageResource(R.drawable.squarebutton);
+            button24.setImageResource(R.drawable.squarebutton);
+            button25.setImageResource(R.drawable.squarebutton);
+            button26.setImageResource(R.drawable.squarebutton);
+            button27.setImageResource(R.drawable.squarebutton);
+            button28.setImageResource(R.drawable.squarebutton);
+            button29.setImageResource(R.drawable.squarebutton);
+            button30.setImageResource(R.drawable.squarebutton);
+            button31.setImageResource(R.drawable.squarebutton);
+            button32.setImageResource(R.drawable.squarebutton);
+            button33.setImageResource(R.drawable.squarebutton);
+            button34.setImageResource(R.drawable.squarebutton);
+            button35.setImageResource(R.drawable.squarebutton);
+            button36.setImageResource(R.drawable.squarebutton);
+        }
     }
-
 }

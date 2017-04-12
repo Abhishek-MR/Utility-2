@@ -134,21 +134,33 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyViewHolder>  {
                         i = new Intent(c, WebActivity.class);
                         i.putExtra("website", "ln");
                         break;
+                    case "GOOGLE PLUS":
+                        i = new Intent(c, WebActivity.class);
+                        i.putExtra("website", "gp");
+                        break;
+                    case "MY SPACE":
+                        i = new Intent(c, WebActivity.class);
+                        i.putExtra("website", "my");
+                        break;
                     case "quora":
                         i = new Intent(c, WebActivity.class);
                         i.putExtra("website", "qu");
                         break;
-                    case "news":
+                    case "TELEGRAM":
                         i = new Intent(c, WebActivity.class);
+                        i.putExtra("website", "te");
+                        break;
+                    case "news":
+                        i = new Intent(c, Popup.class);
                         i.putExtra("website", "ne");
                         break;
                     case "doctors":
                         i = new Intent(c, WebActivity.class);
                         i.putExtra("website", "do");
                         break;
-                    case "uber":
-                        i = new Intent(c, WebActivity.class);
-                        i.putExtra("website", "ub");
+                    case "cabs":
+                        i = new Intent(c, Popup.class);
+                        i.putExtra("website", "cb");
                         break;
                     case "hotels":
                         i = new Intent(c, WebActivity.class);
@@ -157,9 +169,8 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyViewHolder>  {
 
                     case "piano":
                         i = new Intent(c, WebActivity.class);
-                        i.putExtra("website", "pi");
+                        i.putExtra("website", "cu");
                         break;
-
                     case "flappy bird":
                         i = new Intent(c, WebActivity.class);
                         i.putExtra("website", "flp");
@@ -175,10 +186,22 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyViewHolder>  {
                         i.putExtra("website", "20");
                         break;
 
-                    case "redbus":
+                    case "FRUIT NINJA":
                         i = new Intent(c, WebActivity.class);
-                        i.putExtra("website", "rb");
+                        i.putExtra("website", "fn");
                         break;
+
+                    case "bus service":
+                        i = new Intent(c, Popup.class);
+                        i.putExtra("website","bu");
+                        break;
+
+                    case "MUSIC":
+                        i = new Intent(c, Popup.class);
+                        i.putExtra("website","mu");
+                        break;
+
+
 
 
 

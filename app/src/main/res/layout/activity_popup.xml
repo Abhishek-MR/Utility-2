@@ -1,52 +1,75 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="#000000"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context="com.example.abhi.utility.MainActivity"
+    tools:context="com.example.abhi.utility.Popup"
     android:id="@+id/rel">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="horizontal"
+        android:orientation="vertical"
+        android:weightSum="2"
         >
         <android.support.v7.widget.CardView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_margin="3dp"
+            android:onClick="on1Click"
+            app:cardBackgroundColor="#424242"
+
+            >
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:layout_gravity="center">
                 <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/bmi"/>
+                    android:layout_width="90dp"
+                    android:layout_height="100dp"
+                    android:id="@+id/imgfirst"
+                    android:src="@drawable/icon"/>
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="RedBus"/>
+                    android:gravity="center"
+                    android:textColor="#ffffff"
+                    android:id="@+id/txtfirst"
+                    android:text="RedBus"
+                    />
             </LinearLayout>
         </android.support.v7.widget.CardView>
 
 
         <android.support.v7.widget.CardView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="3dp"
+            android:onClick="on2Click"
+            app:cardBackgroundColor="#424242"
+            android:layout_weight="1">
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:layout_gravity="center"
+                >
                 <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/bmi"/>
+                    android:layout_width="100dp"
+                    android:layout_height="90dp"
+                    android:id="@+id/imgsec"
+                    android:src="@drawable/icon"/>
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="RedBus"/>
+                    android:id="@+id/txtsec"
+
+                    android:gravity="center"
+                    android:textColor="#ffffff"
+                    android:text="AbhiBus"/>
             </LinearLayout>
         </android.support.v7.widget.CardView>
 

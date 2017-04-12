@@ -79,7 +79,6 @@
             android:name=".MirrorAct"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
-        <activity android:name=".Ninex9Activity" />
         <activity
             android:name=".Popup"
             android:theme="@style/AppTheme.NoActionBar2" />

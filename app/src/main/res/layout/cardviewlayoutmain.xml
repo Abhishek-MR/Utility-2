@@ -31,7 +31,7 @@
             <android.support.v7.widget.CardView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:cardBackgroundColor="#616161"
+                app:cardBackgroundColor="#000000"
                 android:id="@+id/cd">
             <ImageView
                 android:layout_width="40dp"
@@ -47,9 +47,9 @@
                 android:layout_marginTop="5dp"
                 android:layout_alignParentTop="true"
                 android:textAllCaps="true"
-                android:textColor="#8bf5f5f5"
+                android:textColor="#eeeeee"
                 android:gravity="center"
-                android:layout_marginLeft="15dp"
+                android:layout_marginLeft="18dp"
                 android:id="@+id/option_name"
                 android:text="calendar"/>
 

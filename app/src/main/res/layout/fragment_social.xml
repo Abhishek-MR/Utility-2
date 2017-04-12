@@ -19,6 +19,7 @@
         android:layout_height="wrap_content"
         app:cardElevation="3dp"
         app:cardCornerRadius="3dp"
+        app:cardBackgroundColor="#000000"
         android:foreground="?android:attr/selectableItemBackgroundBorderless"
         android:stateListAnimator="@animator/lift_on_touch"
         app:cardUseCompatPadding="true"
@@ -27,6 +28,7 @@
         <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
+
             android:padding="10dp">
 
             <ImageView
@@ -43,7 +45,7 @@
                 android:layout_marginTop="5dp"
                 android:layout_alignParentTop="true"
                 android:textAllCaps="true"
-                android:textColor="#000"
+                android:textColor="#eeeeee"
                 android:gravity="center"
                 android:layout_marginLeft="15dp"
                 android:id="@+id/option_name"

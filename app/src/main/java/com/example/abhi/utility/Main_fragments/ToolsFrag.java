@@ -35,19 +35,19 @@ public class ToolsFrag extends Fragment {
     private ArrayList<Option> getMainOptions() {
         ArrayList<Option> options =new ArrayList<>();
 
-        Option option = new Option(R.drawable.calculator,"calculator");
+        Option option = new Option(R.drawable.calc,"calculator");
         options.add(option);
 
-        option = new Option(R.drawable.flashlight,"flashlight");
+        option = new Option(R.drawable.flash,"flashlight");
         options.add(option);
 
         option = new Option(R.drawable.compass,"compass");
         options.add(option);
 
-        option = new Option(R.drawable.timer,"timer");
+        option = new Option(R.drawable.time,"timer");
         options.add(option);
 
-        option = new Option(R.drawable.calendar,"calendar");
+        option = new Option(R.drawable.calen,"calendar");
         options.add(option);
 
         option = new Option(R.drawable.bmi,"bmi");
@@ -57,13 +57,13 @@ public class ToolsFrag extends Fragment {
         options.add(option);
 
 
-        option = new Option(R.drawable.rul,"ruler");
+        option = new Option(R.drawable.ruler,"ruler");
         options.add(option);
 
         option = new Option(R.drawable.qr,"qrcode");
         options.add(option);
 
-        option = new Option(R.drawable.mir,"mirror");
+        option = new Option(R.drawable.mirr,"mirror");
         options.add(option);
 
         return options;

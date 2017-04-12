@@ -120,26 +120,24 @@ public class SocialFrag extends Fragment {
         option = new Option(R.drawable.tw,"twitter");
         options.add(option);
 
-        option = new Option(R.drawable.ins,"instagram");
+        option = new Option(R.drawable.insta,"instagram");
         options.add(option);
 
-        option = new Option(R.drawable.linkdin,"linkedin");
+        option = new Option(R.drawable.link,"linkedin");
         options.add(option);
 
         option = new Option(R.drawable.quora,"quora");
         options.add(option);
 
-        option = new Option(R.drawable.happy,"b");
+        option = new Option(R.drawable.gp,"GOOGLE PLUS");
         options.add(option);
 
-        option = new Option(R.drawable.happy,"b");
+        option = new Option(R.drawable.my,"MY SPACE");
         options.add(option);
 
-        option = new Option(R.drawable.happy,"b");
+        option = new Option(R.drawable.te,"TELEGRAM");
         options.add(option);
 
-        option = new Option(R.drawable.happy,"b");
-        options.add(option);
 
 
 

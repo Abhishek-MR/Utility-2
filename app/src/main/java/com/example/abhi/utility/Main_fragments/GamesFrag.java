@@ -83,18 +83,20 @@ public class GamesFrag extends Fragment {
     private ArrayList<Option> getOnlineOptions() {
         ArrayList<Option> options = new ArrayList<>();
 
-        Option option = new Option(R.drawable.piano, "piano tiles");
+        Option option = new Option(R.drawable.game1, "2048");
         options.add(option);
 
         option = new Option(R.drawable.flappy, "flappy bird");
         options.add(option);
 
-        option = new Option(R.drawable.icon, "Stack tower");
+        option = new Option(R.drawable.st, "Stack tower");
         options.add(option);
 
-        option = new Option(R.drawable.icon, "2048");
+        option = new Option(R.drawable.cut, "CUT THE ROPE");
         options.add(option);
 
+        option = new Option(R.drawable.fn, "FRUIT NINJA");
+        options.add(option);
         return options;
 
     }
@@ -102,7 +104,7 @@ public class GamesFrag extends Fragment {
     private ArrayList<Option> getOfflineOptions() {
         ArrayList<Option> options = new ArrayList<>();
 
-        Option option = new Option(R.drawable.logo, "minesweeper");
+        Option option = new Option(R.drawable.mine, "minesweeper");
         options.add(option);
 
 

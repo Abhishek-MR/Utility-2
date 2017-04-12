@@ -65,15 +65,34 @@ public class WebActivity extends AppCompatActivity {
             case "in" : website = "https://www.instagram.com/accounts/login/"; break;
             case "ln" : website = "https://in.linkedin.com/"; break;
             case "qu" : website = "https://www.quora.com/"; break;
-            case "ne" : website = "http://www.thehindu.com/news/"; break;
+            case "hi" : website = "http://www.thehindu.com/news/"; break;
             case "do" : website = "https://www.practo.com/"; break;
             case "ub" : website = "https://m.uber.com/"; break;
             case "ho" : website = "https://www.oyorooms.com/"; break;
-            case "pi" : website = "http://m.silvergames.com/en/piano-tiles"; break;
             case "flp" :website = "http://m.silvergames.com/en/flappy-bird"; break;
             case "st" : website = "http://m.silvergames.com/en/stack-tower"; break;
             case "20" : website = "http://m.silvergames.com/en/2048"; break;
             case "rb" : website = "https://m.redbus.in"; break;
+            case "ab" : website = "https://www.abhibus.com/mobile/"; break;
+            case "ol" : website = "https://www.olacabs.com/"; break;
+            case "ga" : website = "gaana.com"; break;
+            case "wy" : website = "https://music.wynk.in/music/index.html"; break;
+            case "toi" : website = "http://timesofindia.indiatimes.com/"; break;
+            case "fn" : website = "http://www.silvergames.com/fruit-slice"; break;
+            case "cu" : website = "http://www.silvergames.com/cut-the-rope-experiments"; break;
+            case "gp" : website = "https://plus.google.com/"; break;
+            case "my" : website = "https://myspace.com/"; break;
+            case "te" : website = "https://web.telegram.org/#/login"; break;
+
+
+
+
+
+
+
+
+
+
 
 
 

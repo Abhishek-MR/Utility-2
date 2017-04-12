@@ -32,6 +32,7 @@ import java.util.Locale;
 public class MainActivity extends AppCompatActivity {
     private FloatingActionButton fab;
     private final int REQ_CODE_SPEECH_INPUT = 100;
+    TabLayout tabLayout;
 
 
     @Override
@@ -51,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
         ViewPager vp = (ViewPager) findViewById(R.id.mViewpager);
         this.addPages(vp);
 
-        TabLayout tabLayout = (TabLayout) findViewById(R.id.mTab);
+        tabLayout = (TabLayout) findViewById(R.id.mTab);
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
         tabLayout.setupWithViewPager(vp);
         tabLayout.setOnTabSelectedListener(listener(vp));
@@ -78,6 +79,19 @@ public class MainActivity extends AppCompatActivity {
 
     }//end of onCreate
 
+    public void onBackPressed ()
+    {
+        if(tabLayout.getSelectedTabPosition()== 0||tabLayout.getSelectedTabPosition()== 2||tabLayout.getSelectedTabPosition()== 3)
+        {
+            TabLayout.Tab tab = tabLayout.getTabAt(1);
+            tab.select();
+        }
+        else
+        {
+            super.onBackPressed();
+            finish();
+        }
+    }
 
 
     //Showing google speech input dialog
@@ -166,7 +180,9 @@ public class MainActivity extends AppCompatActivity {
                             break;
 
 
-                        //webview
+
+
+                        //social
                         case "open Facebook":
                             i = new Intent(this, WebActivity.class);
                             i.putExtra("website", "fb");
@@ -188,17 +204,47 @@ public class MainActivity extends AppCompatActivity {
                             i = new Intent(this, WebActivity.class);
                             i.putExtra("website", "qu");
                             break;
-                        case "open news":
+                        case "open Google plus":
                             i = new Intent(this, WebActivity.class);
+                            i.putExtra("website", "gp");
+                            break;
+                        case "open my spce":
+                            i = new Intent(this, WebActivity.class);
+                            i.putExtra("website", "my");
+                            break;
+                        case "open telegram":
+                            i = new Intent(this, WebActivity.class);
+                            i.putExtra("website", "te");
+                            break;
+
+                        //others
+                        case "open news":
+                            i = new Intent(this, Popup.class);
                             i.putExtra("website", "ne");
+                            break;
+                        case "open toi":
+                            i = new Intent(this, WebActivity.class);
+                            i.putExtra("website", "toi");
+                            break;
+                        case "open the hindu":
+                            i = new Intent(this, WebActivity.class);
+                            i.putExtra("website", "hi");
                             break;
                         case "open doctors":
                             i = new Intent(this, WebActivity.class);
                             i.putExtra("website", "do");
                             break;
+                        case "open cabs":
+                            i = new Intent(this, Popup.class);
+                            i.putExtra("website", "cb");
+                            break;
                         case "open uber":
                             i = new Intent(this, WebActivity.class);
                             i.putExtra("website", "ub");
+                            break;
+                        case "open ola":
+                            i = new Intent(this, WebActivity.class);
+                            i.putExtra("website", "ol");
                             break;
                         case "open hotels":
                             i = new Intent(this, WebActivity.class);
@@ -229,11 +275,44 @@ public class MainActivity extends AppCompatActivity {
                             i = new Intent(this, WebActivity.class);
                             i.putExtra("website", "20");
                             break;
+                        case "open cut the rope":
+                            i = new Intent(this, WebActivity.class);
+                            i.putExtra("website", "cu");
+                            break;
+                        case "open fruit ninja":
+                            i = new Intent(this, WebActivity.class);
+                            i.putExtra("website", "fn");
+                            break;
+
+                        case "open bus service":
+                            i = new Intent(this, Popup.class);
+                            i.putExtra("website", "bu");
+                            break;
 
                         case "open redBus":
                             i = new Intent(this, WebActivity.class);
                             i.putExtra("website", "rb");
                             break;
+
+                        case "open abhi bus":
+                            i = new Intent(this, WebActivity.class);
+                            i.putExtra("website", "ab");
+                            break;
+                        case "open music":
+                            i = new Intent(this, Popup.class);
+                            i.putExtra("website", "mu");
+                            break;
+
+                        case "open gaana":
+                            i = new Intent(this, WebActivity.class);
+                            i.putExtra("website", "ga");
+                            break;
+
+                        case "open wynk":
+                            i = new Intent(this, WebActivity.class);
+                            i.putExtra("website", "wy");
+                            break;
+
 
 
                         default:
